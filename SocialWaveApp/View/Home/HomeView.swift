@@ -16,29 +16,6 @@ struct HomeView: View {
                 LazyVStack(spacing: 0) {
                     ForEach(viewModel.posts) { post in
                         PostView(post: post, profilePicURL: viewModel.profilePicture)
-                        
-//                        VStack(alignment: .leading) {
-//                            Text(post.topic ?? .empty)
-//                                .font(.headline)
-//                            Text(post.category ?? .empty)
-//                                .font(.subheadline)
-//                                .foregroundColor(.gray)
-//                            AsyncImage(url: URL(string: post.imageUrl ?? .empty)) { image in
-//                                image
-//                                    .resizable()
-//                                    .scaledToFit()
-//                                    .cornerRadius(10)
-//
-//                            } placeholder: {
-//                                Image.newspaper
-//                                    .resizable()
-//                                    .frame(width: 100, height: 100  , alignment: .center)
-//                                    .padding()
-//                                    .opacity(0.2)
-//                            }
-//                            Text(post.comments ?? .empty)
-//                            Divider()
-//                        }
                         .padding(.bottom)
                     }
                 }
