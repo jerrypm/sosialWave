@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FloatingTabbar: View {
+    
+    // MARK: - PROPERTIES
     @Binding var selected: Int
     
+    // MARK: - BODY
     var body: some View {
-        
         HStack {
             Spacer(minLength: 0)
             HStack {

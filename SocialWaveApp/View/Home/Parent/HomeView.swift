@@ -8,31 +8,45 @@
 import SwiftUI
 
 struct HomeView: View {
+    // MARK: - PROPERTIES
     @StateObject var viewModel = HomeViewModel()
     
+    // MARK: - BODY
     var body: some View {
         NavigationView {
-            ScrollView(showsIndicators: false) {
-                LazyVStack(spacing: 0) {
-                    ForEach(viewModel.posts) { post in
-                        PostView(post: post, profilePicURL: viewModel.profilePicture)
-                        .padding(.bottom)
-                    }
-                }
-                .padding()
+            VStack {
+                LogoToolbarImage()
                 
-                Spacer(minLength: 100)
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .background(Color.primary)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    LogoToolbarImage()
+                ScrollView(showsIndicators: false) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 14) {
+                            ForEach(viewModel.categories, id: \.self) { category in
+                                CategoryView(category: category)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
+                    LazyVStack(spacing: 0) {
+                        ForEach(viewModel.posts) { post in
+                            PostView(
+                                post: post,
+                                username: viewModel.username,
+                                profilePicURL: viewModel.profilePicture
+                            )
+                            .padding(.bottom)
+                        }
+                    }
+                    .padding()
+                    
+                    Spacer(minLength: 100)
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .background(Color.primary)
+                .onAppear {
+                    viewModel.fetchPosts()
                 }
             }
-            .onAppear {
-                viewModel.fetchPosts()
-            }
+            .background(Color.primary)
         }
     }
 }

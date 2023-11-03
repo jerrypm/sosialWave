@@ -40,5 +40,4 @@ func onBoardingButton(title: String) -> some View {
         .background(Color.white)
         .cornerRadius(8)
         .shadow(radius: 3)
-    
 }

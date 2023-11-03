@@ -34,7 +34,6 @@ extension Color {
     }
     
     // MARK: Category - Shadow
-    
     public static var shadow: Color {
         return Color(SC.shadow.value)
     }

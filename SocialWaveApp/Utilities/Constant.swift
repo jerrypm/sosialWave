@@ -10,7 +10,7 @@ import Foundation
 typealias SC = StringConstant
 
 enum StringConstant: String {
-    //MARK: - Empty
+    //MARK: - Empty & Tab
     case empty = ""
     case dash = "-"
     case space = "   "
@@ -20,8 +20,9 @@ enum StringConstant: String {
     case chatTab = "Chat"
     case profileTab = "Profile"
     
-    //MARK: - Keys
+    //MARK: - Keys & Format
     case isShowTabBar = "isShowTabBar"
+    case datePostFormat = "d MMM"
     
     //MARK: - Image System Name
     case newspaper = "newspaper"
@@ -30,17 +31,16 @@ enum StringConstant: String {
     case gear = "gearshape"
     case flag = "flag.circle"
     case close = "xmark.circle"
+    case heart = "heart"
+    case heartFill = "heart.fill"
     
     //MARK: - Image Assets
     case home = "home"
     case search = "search"
     case chat = "chat_bubble"
     case profile = "person"
-    case like = "heart"
     case comment = "comment"
     case share = "share"
-    
-    case imageTitle = "Social Wave"
     
     //MARK: - Colors String
     case darkCornflowerBlue = "Dark Cornflower Blue"
@@ -49,6 +49,9 @@ enum StringConstant: String {
     case backgroundDefault = "Background Default"
     case textPrimary = "Text Primary"
     case shadow = "Shadow Color"
+    
+    //MARK: - Other
+    case imageTitle = "Social Wave"
     
     var value: String {
         return rawValue

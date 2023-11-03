@@ -9,10 +9,6 @@ import SwiftUI
 
 extension Image {
     // MARK: System
-    public static var newspaper: Image {
-        return Image(systemName: SC.newspaper.value)
-    }
-    
     public static var magnifyingglass: Image {
         return Image(systemName: SC.magnifyingglass.value)
     }
@@ -33,6 +29,13 @@ extension Image {
         return Image(systemName: SC.close.value)
     }
     
+    public static var heart: Image {
+        return Image(systemName: SC.heart.value)
+    }
+    
+    public static var heartFill: Image {
+        return Image(systemName: SC.heartFill.value)
+    }
     
     // MARK: Assets
     // Tabbar
@@ -53,10 +56,6 @@ extension Image {
     }
     
     // post
-    public static var like: Image {
-        return Image(uiImage: UIImage(named: SC.like.value)!)
-    }
-    
     public static var comment: Image {
         return Image(uiImage: UIImage(named: SC.comment.value)!)
     }

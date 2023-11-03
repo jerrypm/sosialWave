@@ -9,10 +9,12 @@ import SwiftUI
 import Kingfisher
 
 struct PostHeaderView: View {
+    // MARK: - PROPERTIES
     @Binding var profilePicture: URL?
     @Binding var username: String?
     @State var postDate: Date?
     
+    // MARK: - BODY
     var body: some View {
         HStack(spacing: 12) {
             KFImage(profilePicture)
@@ -21,7 +23,7 @@ struct PostHeaderView: View {
                 .frame(width: 40, height: 40)
                 .cornerRadius(20)
             VStack(alignment: .leading) {
-                Text(username ?? "")
+                Text(username ?? .empty)
                     .font(.system(size: 14))
                     .foregroundColor(.black)
                 Text(formatDate())
@@ -34,10 +36,10 @@ struct PostHeaderView: View {
     
     private func formatDate() -> String {
         guard let postDate = postDate else {
-            return ""
+            return .empty
         }
         let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM"
+        formatter.dateFormat = SC.datePostFormat.value
         return formatter.string(from: postDate)
     }
     

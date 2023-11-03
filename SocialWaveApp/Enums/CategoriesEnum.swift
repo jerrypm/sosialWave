@@ -5,27 +5,47 @@
 //  Created by Jeri Purnama on 13/10/23.
 //
 
-import Foundation
+import SwiftUI
 
 enum Categories: String {
-    case Entertainment
-    case Music
-    case Event
-    case Place
-    case Food
+    case trending
+    case entertainment
+    case music
+    case event
+    case place
+    case food
     
-    func imageName() -> String {
+    func name() -> String {
         switch self {
-        case .Entertainment:
-            return "entertainment"
-        case .Music:
-            return "music"
-        case .Event:
-            return "event"
-        case .Place:
-            return "place"
-        case .Food:
-            return "food"
+        case .trending:
+            return "Trending"
+        case .entertainment:
+            return "Entertainment"
+        case .music:
+            return "Music"
+        case .event:
+            return "Event"
+        case .place:
+            return "Place"
+        case .food:
+            return "Food"
+        }
+    }
+    
+    func icon() -> Image {
+        switch self {
+        case .trending:
+            return Image(systemName: "number.square")
+        case .entertainment:
+            return Image(systemName: "arrow.up.right.video")
+        case .music:
+            return Image(systemName: "music.note")
+        case .event:
+            return Image(systemName: "calendar")
+        case .place:
+            return Image(systemName: "network")
+        case .food:
+            return Image(systemName: "bag.circle")
         }
     }
 }

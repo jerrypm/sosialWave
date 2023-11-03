@@ -38,7 +38,6 @@ struct ContentView: View {
                 FloatingTabbar(selected: $selected)
                     .shadow(color: Color.shadow, radius: 2, x: 0, y: 2)
             }
-            
         }
     }
 }
