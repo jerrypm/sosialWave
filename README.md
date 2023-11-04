@@ -1,6 +1,7 @@
 # Sosial Wave
 
- <img src="https://github.com/jerrypm/sosialWave/assets/15967964/eb5e2f56-005b-4fc0-a3ed-19da7c250e79" alt="drawing" width="300"/> | <img src="https://github.com/jerrypm/sosialWave/assets/15967964/dcd7db4d-a4f3-493c-9fc9-ff14388edc02" alt="drawing" width="300"/>
+ <img src="https://github.com/jerrypm/sosialWave/assets/15967964/eb5e2f56-005b-4fc0-a3ed-19da7c250e79" alt="drawing" width="300"/> | <img src="https://github.com/jerrypm/sosialWave/assets/15967964/0198cf6d-a600-43bf-8623-51c7506e227a" alt="drawing" width="300"/>
+
 
 
 Sosial Wave is an iOS application built using SwiftUI to monitor and interact with your social media in one convenient place.
