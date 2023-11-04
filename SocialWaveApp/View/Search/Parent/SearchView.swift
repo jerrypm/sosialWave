@@ -23,22 +23,22 @@ struct SearchView: View {
                     HStack(alignment: .center, spacing: 5) {
                         Image.magnifyingglass
                         .frame(width: 18, height: 18)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.white)
                         
                         Text("Search Story")
-                          .foregroundColor(Color(red: 0.72, green: 0.7, blue: 0.73))
+                            .foregroundColor(Color.white)
                           .frame(width: 200, alignment: .topLeading)
                         Spacer()
                     }
                     .frame(height: 28)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
-                    .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                    .background(Color.white.opacity(0.2))
                     .cornerRadius(8)
                 }
              
                 ScrollView(showsIndicators: false) {
-                    LazyVStack(spacing: 10) {
+                    LazyVStack(spacing: 1) {
                         ForEach(viewModel.searchItems, id: \.self) { text in
                             HStack {
                                 HStack(spacing: 0) {

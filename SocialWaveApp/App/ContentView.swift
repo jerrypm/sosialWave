@@ -11,7 +11,7 @@ struct ContentView: View {
     // MARK: PROPERTIES
     @AppStorage(SC.isShowTabBar.value) var isShowTabBar: Bool = true
     @State var selected: Int = 0
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.primary.ignoresSafeArea()
@@ -26,14 +26,14 @@ struct ContentView: View {
                 default:
                     GeometryReader { _ in ProfileView() }
                 }
-                
+
             }
             .accentColor(.white)
             .onAppear {
                 isShowTabBar = true
                 UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             }
-            
+
             if isShowTabBar {
                 FloatingTabbar(selected: $selected)
                     .shadow(color: Color.shadow, radius: 2, x: 0, y: 2)
