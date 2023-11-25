@@ -19,6 +19,7 @@ struct CardView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: 100, height: 150)
+            .background(Color.white)
             .cornerRadius(6)
             .padding(2)
     }

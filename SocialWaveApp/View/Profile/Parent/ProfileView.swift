@@ -11,7 +11,7 @@ import Kingfisher
 struct ProfileView: View {
     // MARK: - PROPERTIES
     @StateObject var viewModel = ProfileViewModel()
-    
+    @State private var selectedTab = 0
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     
     // MARK: - BODY
@@ -30,29 +30,32 @@ struct ProfileView: View {
                         //User Header
                         UserDetailHeader()
                         
-                        HStack(alignment: .top, spacing: 16) {
-                            VStack {
-                                Text("My posts")
-                                    .font(Font.custom("Rubik", size: 16))
-                                    .foregroundColor(.white)
-                                Divider()
-                                    .background(.white)
-                            }
-                            
-                            Spacer()
+                        TabView(selection: $selectedTab) {
+                            Text("My Posts")
+                                .tag(0)
+                                .tabItem {
+                                    Label("My Posts", systemImage: "square.grid.2x2.fill")
+                                }
+                                .foregroundColor(.white)
                             
                             Text("Likes")
-                                .font(Font.custom("Rubik", size: 16))
+                                .tag(1)
+                                .tabItem {
+                                    Label("Likes", systemImage: "heart.fill")
+                                }
                                 .foregroundColor(.white)
-                            
-                            Spacer()
                             
                             Text("Bookmark")
-                                .font(Font.custom("Rubik", size: 16))
+                                .tag(2)
+                                .tabItem {
+                                    Label("Bookmark", systemImage: "bookmark.fill")
+                                }
                                 .foregroundColor(.white)
                         }
+                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+                        .background(.white)
                         .padding(4)
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
                         
                         //Looping Image List
                         LazyVGrid(columns: columns, spacing: 10) {

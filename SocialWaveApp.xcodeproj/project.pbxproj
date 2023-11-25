@@ -47,6 +47,8 @@
 		C44B073B2AE67E7E00848400 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B073A2AE67E7E00848400 /* UserModel.swift */; };
 		C44B073D2AE682BB00848400 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B073C2AE682BB00848400 /* HomeViewModel.swift */; };
 		C44B073F2AE684A800848400 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44B073E2AE684A800848400 /* Constant.swift */; };
+		C451519F2B0903C0009419E9 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C451519E2B0903C0009419E9 /* SearchBar.swift */; };
+		C45151A12B090406009419E9 /* SearchSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45151A02B090406009419E9 /* SearchSubView.swift */; };
 		C4BD2F002AF209EA001F4D7F /* PostFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD2EFF2AF209EA001F4D7F /* PostFooterView.swift */; };
 		C4BD2F022AF22AF4001F4D7F /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BD2F012AF22AF4001F4D7F /* CategoryView.swift */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,8 @@
 		C44B073A2AE67E7E00848400 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C44B073C2AE682BB00848400 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C44B073E2AE684A800848400 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		C451519E2B0903C0009419E9 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		C45151A02B090406009419E9 /* SearchSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSubView.swift; sourceTree = "<group>"; };
 		C4BD2EFF2AF209EA001F4D7F /* PostFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFooterView.swift; sourceTree = "<group>"; };
 		C4BD2F012AF22AF4001F4D7F /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,6 +195,7 @@
 				C411A6312AE6BE4C00FC0B8D /* ButtonStyle.swift */,
 				C411A6392AE6C38B00FC0B8D /* FloatingTabbar.swift */,
 				C41BD0172AE909E100BBEB0E /* CustomToolBar.swift */,
+				C451519E2B0903C0009419E9 /* SearchBar.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				C43AF6702AF6A75F001C1BC4 /* Parent */,
+				C451519D2B090398009419E9 /* SubView */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -328,6 +334,14 @@
 			children = (
 				C43AF6752AF6A85D001C1BC4 /* ImageProfileView.swift */,
 				C43AF6772AF6AA5D001C1BC4 /* UserDetailHeader.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		C451519D2B090398009419E9 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				C45151A02B090406009419E9 /* SearchSubView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -421,6 +435,7 @@
 				C411A62E2AE6BDB500FC0B8D /* PostModel.swift in Sources */,
 				BCED0D652AD99864007D00C0 /* CategoriesEnum.swift in Sources */,
 				C411A63C2AE6C3D300FC0B8D /* Extension+Color.swift in Sources */,
+				C45151A12B090406009419E9 /* SearchSubView.swift in Sources */,
 				C411A6382AE6BF9100FC0B8D /* ReportModel.swift in Sources */,
 				C411A6322AE6BE4C00FC0B8D /* ButtonStyle.swift in Sources */,
 				BCED0D6B2AD998C6007D00C0 /* Extension+Date.swift in Sources */,
@@ -428,6 +443,7 @@
 				BCED0D4D2AD997B4007D00C0 /* SocialWaveAppApp.swift in Sources */,
 				BCED0D632AD9984F007D00C0 /* RatingEnum.swift in Sources */,
 				BCED0D672AD99880007D00C0 /* NotificationsEnum.swift in Sources */,
+				C451519F2B0903C0009419E9 /* SearchBar.swift in Sources */,
 				C41BD0242AE95D0F00BBEB0E /* PostView.swift in Sources */,
 				C4BD2F022AF22AF4001F4D7F /* CategoryView.swift in Sources */,
 				C411A6402AE6C5D500FC0B8D /* HomeView.swift in Sources */,
@@ -575,6 +591,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialWaveApp/Preview Content\"";
+				DEVELOPMENT_TEAM = HP77R9PHEA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -604,6 +621,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SocialWaveApp/Preview Content\"";
+				DEVELOPMENT_TEAM = HP77R9PHEA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

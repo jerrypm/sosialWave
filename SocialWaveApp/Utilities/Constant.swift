@@ -52,6 +52,7 @@ enum StringConstant: String {
     
     //MARK: - Other
     case imageTitle = "Social Wave"
+    case searchStory = "Search Story"
     
     var value: String {
         return rawValue
