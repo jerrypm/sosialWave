@@ -13,6 +13,7 @@ struct User: Identifiable, Codable, Hashable {
     var username: String = ""
     var profileImageUrl: String?
     var email: String
+    var country: String = ""
     var bio: String = ""
     var following: [String]?
     var followers: [String]?
@@ -27,6 +28,7 @@ struct User: Identifiable, Codable, Hashable {
         case username
         case profileImageUrl
         case email
+        case country
         case bio
         case following
         case followers

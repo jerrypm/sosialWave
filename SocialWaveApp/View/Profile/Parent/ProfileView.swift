@@ -12,7 +12,7 @@ struct ProfileView: View {
     // MARK: - PROPERTIES
     @StateObject var viewModel = ProfileViewModel()
     @State private var selectedTab = 0
-    let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    @State var tabIndex = 0
     
     // MARK: - BODY
     var body: some View {
@@ -28,43 +28,15 @@ struct ProfileView: View {
                             .frame(width: 110, height: 110, alignment: .center)
                         
                         //User Header
-                        UserDetailHeader()
+                        UserDetailHeader(userData: viewModel.userData)
                         
-                        TabView(selection: $selectedTab) {
-                            Text("My Posts")
-                                .tag(0)
-                                .tabItem {
-                                    Label("My Posts", systemImage: "square.grid.2x2.fill")
-                                }
-                                .foregroundColor(.white)
-                            
-                            Text("Likes")
-                                .tag(1)
-                                .tabItem {
-                                    Label("Likes", systemImage: "heart.fill")
-                                }
-                                .foregroundColor(.white)
-                            
-                            Text("Bookmark")
-                                .tag(2)
-                                .tabItem {
-                                    Label("Bookmark", systemImage: "bookmark.fill")
-                                }
-                                .foregroundColor(.white)
+                        //Custom Top TabBar
+                        CustomTopTabBar(tabIndex: $tabIndex)
+                        if tabIndex == 0 {
+                            UserPostView(dummyImages: viewModel.dummyImages)
+                        } else {
+                            UserLikesView()
                         }
-                        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-                        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-                        .background(.white)
-                        .padding(4)
-                        
-                        //Looping Image List
-                        LazyVGrid(columns: columns, spacing: 10) {
-                            ForEach(viewModel.dummyImages, id: \.imageUrl) { image in
-                                CardView(imageURL: image.imageUrl)
-                            }
-                        }
-                        .padding()
-                        
                         Spacer(minLength: 64)
                     }
                     .padding(.horizontal)

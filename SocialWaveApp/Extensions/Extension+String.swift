@@ -12,6 +12,10 @@ extension String {
         return SC.empty.value
     }
     
+    public static var pipe: String {
+        return SC.pipe.value
+    }
+    
     func capitalizeFirstLetterOnly() -> String {
         let lowercasedInput = self.lowercased()
         return lowercasedInput.prefix(1).capitalized + lowercasedInput.dropFirst()

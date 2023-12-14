@@ -8,15 +8,23 @@
 import SwiftUI
 
 struct SearchBarView: View {
+    @State private var searchText = String.empty
+    @State private var showCancelButton: Bool = false
+    
+    // MARK: - BODY
     var body: some View {
         HStack(alignment: .center, spacing: 5) {
             Image.magnifyingglass
                 .frame(width: 18, height: 18)
                 .foregroundColor(.white)
+//            TextField(SC.search.value, text: $searchText, onEditingChanged: { isEditing in
+//                showCancelButton = true
+//            }, onCommit: {
+//                print("onCommit")
+//            })
+//            .foregroundColor(.white)
+//            .frame(width: 200, alignment: .topLeading)
             
-            Text(SC.searchStory.value)
-                .foregroundColor(Color.white)
-                .frame(width: 200, alignment: .topLeading)
             Spacer()
         }
         .frame(height: 28)

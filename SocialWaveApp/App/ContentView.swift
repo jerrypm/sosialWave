@@ -10,24 +10,20 @@ import SwiftUI
 struct ContentView: View {
     // MARK: PROPERTIES
     @AppStorage(SC.isShowTabBar.value) var isShowTabBar: Bool = true
-    @State var selected: Int = 0
+    @State var selectedTab: Int = 0
 
     var body: some View {
         ZStack(alignment: .bottom) {
             Color.primary.ignoresSafeArea()
             VStack {
-                switch TabType(rawValue: selected) {
-                case .home:
-                    GeometryReader { _ in HomeView() }
-                case .search:
-                    GeometryReader { _ in SearchView() }
-                case .chat:
-                    GeometryReader { _ in ChatView() }
-                default:
-                    GeometryReader { _ in ProfileView() }
+                switch TabType(rawValue: selectedTab) {
+                case .home: HomeView()
+                case .search: SearchView()
+                case .chat: ChatView()
+                default: ProfileView()
                 }
-
             }
+            .animation(nil, value: selectedTab)
             .accentColor(.white)
             .onAppear {
                 isShowTabBar = true
@@ -35,15 +31,9 @@ struct ContentView: View {
             }
 
             if isShowTabBar {
-                FloatingTabbar(selected: $selected)
+                FloatingTabbar(selected: $selectedTab)
                     .shadow(color: Color.shadow, radius: 2, x: 0, y: 2)
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

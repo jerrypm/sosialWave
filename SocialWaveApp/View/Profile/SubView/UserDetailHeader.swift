@@ -9,13 +9,13 @@ import SwiftUI
 
 struct UserDetailHeader: View {
     // MARK: - PROPERTIES
-    
+    @State var userData: User?
     
     // MARK: - BODY
     var body: some View {
         VStack(spacing: 16) {
-            Text("Ley Clu")
-                .font(Font.custom("Rubik", size: 24))
+            Text(userData?.name ?? .empty)
+                .font(.rubik(size: 24))
                 .kerning(0.24)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.white)
@@ -23,30 +23,32 @@ struct UserDetailHeader: View {
             
             HStack(alignment: .center, spacing: 8) {
                 
-                Text("San Francisco")
+                Text(userData?.country ?? .empty)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                 
-                Text("|")
+                Text(String.pipe)
+                    .fontWeight(.medium)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                 
-                Text("184 following")
+                Text("\(userData?.following?.count ?? .zero) \(SC.following.value)")
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                 
-                Text("|")
+                Text(String.pipe)
+                    .fontWeight(.medium)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                 
-                Text("611 followers")
+                Text("\(userData?.followers?.count ?? .zero) \(SC.followers.value)")
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
             }
             .padding(0)
             .frame(maxWidth: .infinity, alignment: .center)
             
-            Text("My name is Yuna, and I’m a 4 year old Shiba Inu. I’m currently travelling the world! Follow me on Petma")
+            Text(userData?.bio ?? .empty)
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .topLeading)
         }

@@ -13,6 +13,7 @@ enum StringConstant: String {
     //MARK: - Empty & Tab
     case empty = ""
     case dash = "-"
+    case pipe = "|"
     case space = "   "
     
     case homeTab = "Home"
@@ -23,6 +24,9 @@ enum StringConstant: String {
     //MARK: - Keys & Format
     case isShowTabBar = "isShowTabBar"
     case datePostFormat = "d MMM"
+    
+    //MARK: - Font Style
+    case Rubik = "Rubik"
     
     //MARK: - Image System Name
     case newspaper = "newspaper"
@@ -53,6 +57,10 @@ enum StringConstant: String {
     //MARK: - Other
     case imageTitle = "Social Wave"
     case searchStory = "Search Story"
+    case following = "following"
+    case followers = "followers"
+    case myPost = "My Post"
+    case likes = "Likes"
     
     var value: String {
         return rawValue
