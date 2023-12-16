@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BasicRoundedButton: ViewModifier {
-    
     func body(content: Content) -> some View {
         content
             .font(.system(size: 16))
@@ -17,7 +16,8 @@ struct BasicRoundedButton: ViewModifier {
             .background(
                 LinearGradient(gradient: Gradient(colors: [
                     Color(red: 53/255, green: 139/255, blue: 219/255),
-                    Color(red: 155/255, green: 236/255, blue: 254/255)]), startPoint: .top, endPoint: .bottom)
+                    Color(red: 155/255, green: 236/255, blue: 254/255),
+                ]), startPoint: .top, endPoint: .bottom)
             )
             .cornerRadius(16)
     }
@@ -28,7 +28,6 @@ extension View {
         modifier(BasicRoundedButton())
     }
 }
-
 
 func onBoardingButton(title: String) -> some View {
     Text(title)

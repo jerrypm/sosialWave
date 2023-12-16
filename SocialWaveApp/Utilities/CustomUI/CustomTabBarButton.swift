@@ -9,15 +9,17 @@ import SwiftUI
 
 struct TabBarButton: View {
     // MARK: - PROPERTIES
+
     let text: String
     @Binding var isSelected: Bool
-    
+
     // MARK: - BODY
+
     var body: some View {
         Text(text)
             .fontWeight(isSelected ? .heavy : .regular)
             .font(.custom("Avenir", size: 16))
-            .padding(.bottom,10)
+            .padding(.bottom, 10)
             .frame(maxWidth: .infinity, alignment: .center)
             .multilineTextAlignment(.center)
             .foregroundColor(.white)

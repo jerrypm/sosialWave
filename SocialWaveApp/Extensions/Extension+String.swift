@@ -7,16 +7,16 @@
 
 import Foundation
 
-extension String {
-    public static var empty: String {
+public extension String {
+    static var empty: String {
         return SC.empty.value
     }
-    
-    public static var pipe: String {
+
+    static var pipe: String {
         return SC.pipe.value
     }
-    
-    func capitalizeFirstLetterOnly() -> String {
+
+    internal func capitalizeFirstLetterOnly() -> String {
         let lowercasedInput = self.lowercased()
         return lowercasedInput.prefix(1).capitalized + lowercasedInput.dropFirst()
     }

@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-//MARK: - Image Tool Bar
+// MARK: - Image Tool Bar
+
 struct LogoToolbarImage: View {
-    
     // MARK: - BODY
+
     var body: some View {
         Image(SC.imageTitle.value)
             .resizable()
@@ -20,12 +21,15 @@ struct LogoToolbarImage: View {
     }
 }
 
-//MARK: - Title Tool Bar
+// MARK: - Title Tool Bar
+
 struct TitleToolBar: View {
     // MARK: - PROPERTIES
+
     @State var title: String
-    
+
     // MARK: - BODY
+
     var body: some View {
         Text(title)
             .font(.system(size: 20))

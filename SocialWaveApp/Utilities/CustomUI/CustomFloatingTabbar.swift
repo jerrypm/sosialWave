@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FloatingTabbar: View {
-    
     // MARK: - PROPERTIES
+
     @Binding var selected: Int
     
     // MARK: - BODY
+
     var body: some View {
-        
         HStack {
             //: Home
             Button {
@@ -43,7 +43,6 @@ struct FloatingTabbar: View {
                 Image.chat.foregroundColor(selected == 2 ? .primary : .gray)
                 Text(selected == 2 ? SC.chatTab.value : .empty)
                     .foregroundColor(selected == 2 ? .primary : .gray)
-                
             }
             Spacer(minLength: 15)
             
@@ -66,6 +65,5 @@ struct FloatingTabbar: View {
                 .opacity(0.5)
         )
         .padding()
-        
     }
 }

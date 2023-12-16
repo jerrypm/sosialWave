@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13F57BEF2B2B643D00C1AEA8 /* CustomHalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F57BEE2B2B643D00C1AEA8 /* CustomHalfSheet.swift */; };
+		13FC57162B2BF1510077309A /* CustomHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC57152B2BF1510077309A /* CustomHostingController.swift */; };
 		BCED0D4D2AD997B4007D00C0 /* SocialWaveAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCED0D4C2AD997B4007D00C0 /* SocialWaveAppApp.swift */; };
 		BCED0D4F2AD997B4007D00C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCED0D4E2AD997B4007D00C0 /* ContentView.swift */; };
 		BCED0D512AD997B4007D00C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCED0D502AD997B4007D00C0 /* Assets.xcassets */; };
@@ -63,6 +65,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13F57BEE2B2B643D00C1AEA8 /* CustomHalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHalfSheet.swift; sourceTree = "<group>"; };
+		13FC57152B2BF1510077309A /* CustomHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHostingController.swift; sourceTree = "<group>"; };
 		BCED0D492AD997B4007D00C0 /* SocialWaveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialWaveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCED0D4C2AD997B4007D00C0 /* SocialWaveAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialWaveAppApp.swift; sourceTree = "<group>"; };
 		BCED0D4E2AD997B4007D00C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,6 +134,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13FC57172B2C0A6B0077309A /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				13F57BEE2B2B643D00C1AEA8 /* CustomHalfSheet.swift */,
+				C411A6252AE6BCD600FC0B8D /* CustomImagePicker.swift */,
+				C411A62F2AE6BDFD00FC0B8D /* CustomTextFieldStyles.swift */,
+				C411A6312AE6BE4C00FC0B8D /* CustomButtonStyle.swift */,
+				C411A6392AE6C38B00FC0B8D /* CustomFloatingTabbar.swift */,
+				C41BD0172AE909E100BBEB0E /* CustomToolBar.swift */,
+				C451519E2B0903C0009419E9 /* CustomSearchBar.swift */,
+				C498FFA02B119EDA0038463B /* CustomTabBarButton.swift */,
+				C498FFA22B119F1B0038463B /* CustomTopTabBar.swift */,
+				13FC57152B2BF1510077309A /* CustomHostingController.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		13FC57182B2C0A8F0077309A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C44B073E2AE684A800848400 /* Constant.swift */,
+				C411A6292AE6BD4E00FC0B8D /* Cache.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		13FC57242B2C0C7B0077309A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BCED0D502AD997B4007D00C0 /* Assets.xcassets */,
+				13FC57252B2C0CC90077309A /* JSON */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		13FC57252B2C0CC90077309A /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		BCED0D402AD997B4007D00C0 = {
 			isa = PBXGroup;
 			children = (
@@ -150,12 +196,12 @@
 			isa = PBXGroup;
 			children = (
 				BCED0D5C2AD997F7007D00C0 /* App */,
-				BCED0D502AD997B4007D00C0 /* Assets.xcassets */,
 				BCED0D5A2AD997D9007D00C0 /* Enums */,
 				BCED0D5B2AD997E9007D00C0 /* Extensions */,
 				BCED0D5E2AD99808007D00C0 /* Managers */,
 				BCED0D5F2AD99813007D00C0 /* Model */,
 				BCED0D522AD997B4007D00C0 /* Preview Content */,
+				13FC57242B2C0C7B0077309A /* Resources */,
 				BCED0D5D2AD997FF007D00C0 /* Utilities */,
 				BCED0D612AD9982F007D00C0 /* View */,
 				BCED0D602AD99824007D00C0 /* ViewModels */,
@@ -208,16 +254,8 @@
 		BCED0D5D2AD997FF007D00C0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				C44B073E2AE684A800848400 /* Constant.swift */,
-				C411A6292AE6BD4E00FC0B8D /* Cache.swift */,
-				C411A6252AE6BCD600FC0B8D /* CustomImagePicker.swift */,
-				C411A62F2AE6BDFD00FC0B8D /* CustomTextFieldStyles.swift */,
-				C411A6312AE6BE4C00FC0B8D /* CustomButtonStyle.swift */,
-				C411A6392AE6C38B00FC0B8D /* CustomFloatingTabbar.swift */,
-				C41BD0172AE909E100BBEB0E /* CustomToolBar.swift */,
-				C451519E2B0903C0009419E9 /* CustomSearchBar.swift */,
-				C498FFA02B119EDA0038463B /* CustomTabBarButton.swift */,
-				C498FFA22B119F1B0038463B /* CustomTopTabBar.swift */,
+				13FC57172B2C0A6B0077309A /* CustomUI */,
+				13FC57182B2C0A8F0077309A /* Helpers */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -485,8 +523,10 @@
 				BCED0D672AD99880007D00C0 /* NotificationsEnum.swift in Sources */,
 				C451519F2B0903C0009419E9 /* CustomSearchBar.swift in Sources */,
 				C41BD0242AE95D0F00BBEB0E /* PostView.swift in Sources */,
+				13F57BEF2B2B643D00C1AEA8 /* CustomHalfSheet.swift in Sources */,
 				C4BD2F022AF22AF4001F4D7F /* CategoryView.swift in Sources */,
 				C411A6402AE6C5D500FC0B8D /* HomeView.swift in Sources */,
+				13FC57162B2BF1510077309A /* CustomHostingController.swift in Sources */,
 				BCED0D6D2AD998DF007D00C0 /* Extension+String.swift in Sources */,
 				C44B073F2AE684A800848400 /* Constant.swift in Sources */,
 				BCED0D6F2AD998F3007D00C0 /* Extension+NSError.swift in Sources */,

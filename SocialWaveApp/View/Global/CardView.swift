@@ -5,31 +5,32 @@
 //  Created by Jerry Purnama Maulid on 04/11/23.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct CardView: View {
-    
     // MARK: - PROPERTIES
+
     @State var imageURL: String?
-    
+    var width: CGFloat
+
     // MARK: - BODY
+
     var body: some View {
-        KFImage(URL(string: imageURL ?? .empty))
+        KFImage(URL(string: imageURL ?? ""))
             .resizable()
+            .placeholder {
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .opacity(0.3)
+            }
             .aspectRatio(contentMode: .fill)
-            .frame(width: 100, height: 150)
+            .frame(width: width, height: 150)
             .background(Color.white)
             .cornerRadius(6)
             .padding(2)
-    }
-}
-
-struct CardExtraView: View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 4)
-            .fill(Color.white)
-            .frame(height: 300)
-            .padding(5)
+            .shadow(color: .gray, radius: 2, x: 0, y: 2)
     }
 }

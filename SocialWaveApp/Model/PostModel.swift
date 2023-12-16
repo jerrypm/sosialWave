@@ -19,7 +19,7 @@ struct Post: Identifiable, Codable {
     var date: Date?
     var likes: [String]?
     var numberOfComments: Int?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case topic
@@ -32,5 +32,4 @@ struct Post: Identifiable, Codable {
         case likes
         case numberOfComments
     }
-    
 }

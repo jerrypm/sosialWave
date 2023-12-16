@@ -20,7 +20,7 @@ struct CustomTopTabBar: View {
             Spacer()
         }
     }
-    
+
     private func onButtonTapped(index: Int) {
         withAnimation { tabIndex = index }
     }

@@ -12,7 +12,7 @@ class QuickUser: Identifiable, Codable {
     var name: String
     var username: String?
     var profileImageUrl: String?
-    
+
     init(id: String, name: String, username: String?, profileImageUrl: String?) {
         self.id = id
         self.name = name

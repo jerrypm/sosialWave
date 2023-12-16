@@ -9,9 +9,11 @@ import SwiftUI
 
 struct UserDetailHeader: View {
     // MARK: - PROPERTIES
+
     @State var userData: User?
     
     // MARK: - BODY
+
     var body: some View {
         VStack(spacing: 16) {
             Text(userData?.name ?? .empty)
@@ -22,7 +24,6 @@ struct UserDetailHeader: View {
                 .frame(maxWidth: .infinity, alignment: .top)
             
             HStack(alignment: .center, spacing: 8) {
-                
                 Text(userData?.country ?? .empty)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)

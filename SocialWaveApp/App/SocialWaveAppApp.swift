@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct SocialWaveAppApp: App {
+    // MARK: - BODY
+
     var body: some Scene {
         WindowGroup {
             ContentView()

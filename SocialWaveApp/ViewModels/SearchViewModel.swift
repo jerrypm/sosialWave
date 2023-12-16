@@ -11,9 +11,9 @@ class SearchViewModel: ObservableObject {
     @Published var searchText: String = .empty
     @Published var showCancelButton: Bool = false
     @Published var searchItems: [String] = []
-    
+
     init() {
-        searchItems =  [
+        searchItems = [
             "post ikan",
             "post telur",
             "post data kami",
@@ -23,9 +23,8 @@ class SearchViewModel: ObservableObject {
             "post rush",
         ]
     }
-    
+
     func search() {
         // Implement search logic here
     }
-    
 }

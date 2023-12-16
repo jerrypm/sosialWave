@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct ImagePicker : UIViewControllerRepresentable {
-    
-    class Coordinator : NSObject , UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        let parent : ImagePicker
+struct ImagePicker: UIViewControllerRepresentable {
+    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        let parent: ImagePicker
             
-        init(_ parent : ImagePicker){
+        init(_ parent: ImagePicker) {
             self.parent = parent
         }
         
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let uiimage = info[.editedImage] as? UIImage{
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+            if let uiimage = info[.editedImage] as? UIImage {
                 parent.image = uiimage
             }
-            else if let uiimage = info[.originalImage] as? UIImage{
+            else if let uiimage = info[.originalImage] as? UIImage {
                 parent.image = uiimage
             }
             parent.presentationMode.wrappedValue.dismiss()
@@ -28,10 +27,9 @@ struct ImagePicker : UIViewControllerRepresentable {
     }
     
     @Environment(\.presentationMode) var presentationMode
-    @Binding var image : UIImage?
-    @State var source : UIImagePickerController.SourceType
+    @Binding var image: UIImage?
+    @State var source: UIImagePickerController.SourceType
     var allowsEditing: Bool = true
-    
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -41,11 +39,9 @@ struct ImagePicker : UIViewControllerRepresentable {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         picker.sourceType = source
-        picker.allowsEditing = self.allowsEditing
+        picker.allowsEditing = allowsEditing
         return picker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-        
-    }
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }

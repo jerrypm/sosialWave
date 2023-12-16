@@ -9,15 +9,20 @@ import SwiftUI
 
 struct UserPostView: View {
     // MARK: - PROPERTIES
+
     @State var dummyImages: [ImageModel]
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
-    
+
     // MARK: - BODY
-    var body: some View{
-        ZStack{
-            LazyVGrid(columns: columns, spacing: 10) {
+
+    var body: some View {
+        ZStack {
+            LazyVGrid(columns: columns, spacing: 5) {
                 ForEach(dummyImages, id: \.imageUrl) { image in
-                    CardView(imageURL: image.imageUrl)
+                    let screenWidth = UIScreen.main.bounds.width
+                    let totalSpacing = CGFloat(columns.count - 1) * 10
+                    let adjustedWidth = (screenWidth - totalSpacing - 64) / CGFloat(columns.count)
+                    CardView(imageURL: image.imageUrl, width: adjustedWidth)
                 }
             }
             .padding()

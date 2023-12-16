@@ -5,14 +5,16 @@
 //  Created by Jerry Purnama Maulid on 04/11/23.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct ImageProfileView: View {
     // MARK: - PROPERTIES
+
     @State var imageProfileURL: String?
-    
+
     // MARK: - BODY
+
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
             Rectangle()

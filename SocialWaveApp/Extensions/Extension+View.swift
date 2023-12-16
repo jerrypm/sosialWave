@@ -8,13 +8,24 @@
 import SwiftUI
 
 extension View {
+    // MARK: Border
+
     func border(width: CGFloat, edges: [Edge], color: SwiftUI.Color) -> some View {
         overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
     }
+
+    // MARK: For bottom Sheet
+
+    func halfSheet<SheetView: View>(showSheet: Binding<Bool>, @ViewBuilder sheeView: @escaping () -> SheetView) -> some View {
+        return background {
+            HalfSheetHelper(sheetView: sheeView(), showSheet: showSheet)
+        }
+    }
 }
 
-struct EdgeBorder: Shape {
+// MARK: Item Border
 
+struct EdgeBorder: Shape {
     var width: CGFloat
     var edges: [Edge]
 
@@ -38,7 +49,7 @@ struct EdgeBorder: Shape {
             var w: CGFloat {
                 switch edge {
                 case .top, .bottom: return rect.width
-                case .leading, .trailing: return self.width
+                case .leading, .trailing: return width
                 }
             }
 

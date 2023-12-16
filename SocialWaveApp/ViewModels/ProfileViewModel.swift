@@ -16,7 +16,7 @@ class ProfileViewModel: ObservableObject {
     @Published var storiesData = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     @Published var userImageURL = "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
     @Published var userData: User?
-    
+
     let dummyImages: [ImageModel] = [
         ImageModel(imageUrl: "https://www.researchgate.net/profile/Peter-Siemund/publication/329755169/figure/fig1/AS:769346448130048@1560437895151/Written-task-in-English-Picture-story-Gut-gemeint-English-translation-Good.png"),
         ImageModel(imageUrl: "https://buffer.com/library/content/images/2023/10/free-images.jpg"),
@@ -28,18 +28,17 @@ class ProfileViewModel: ObservableObject {
         ImageModel(imageUrl: "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper03.jpg"),
         ImageModel(imageUrl: "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper04.jpg")
     ]
-    
+
     init() {
         userData = User(
             id: "1212",
             name: "Dr. Jhon",
             username: "",
             email: "jhondoe@gmail.com",
-            country: "Singapore", 
+            country: "Singapore",
             bio: "Dr. Jhon Smith is a passionate biomedical scientist with over 15 years of experience in molecular biology and genetics research. He is committed to advancing the field of medical science through innovative research and collaboration. Dr. Smith is an advocate for public science education and regularly participates in community outreach programs.",
             following: ["ali", "lima", "erik"],
             followers: ["erik", "nita"]
         )
     }
 }
-

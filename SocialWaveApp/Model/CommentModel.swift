@@ -14,7 +14,7 @@ struct Comment: Identifiable, Codable {
     var submittedBy: String?
     var date: Date?
     var comment: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case postId

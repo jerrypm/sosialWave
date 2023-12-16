@@ -21,7 +21,7 @@ struct User: Identifiable, Codable, Hashable {
     var blocked: [String]?
     var badgeCount: Int?
     var token: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case name

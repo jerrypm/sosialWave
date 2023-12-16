@@ -14,7 +14,7 @@ enum Categories: String {
     case event
     case place
     case food
-    
+
     func name() -> String {
         switch self {
         case .trending:
@@ -31,7 +31,7 @@ enum Categories: String {
             return "Food"
         }
     }
-    
+
     func icon() -> Image {
         switch self {
         case .trending:
@@ -50,7 +50,8 @@ enum Categories: String {
     }
 }
 
-//MARK: Tab Type
+// MARK: Tab Type
+
 enum TabType: Int {
     case home = 0
     case search = 1

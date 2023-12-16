@@ -16,11 +16,11 @@ struct AppNotification: Identifiable, Codable {
     var postId: String?
     var comment: String?
     var submitterName: String?
-    
+
     var typeEnum: NotificationType {
         NotificationType(rawValue: self.type ?? "") ?? .Comment
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case type

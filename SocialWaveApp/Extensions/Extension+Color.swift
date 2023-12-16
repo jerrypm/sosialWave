@@ -7,34 +7,40 @@
 
 import SwiftUI
 
-extension Color {
+public extension Color {
     // MARK: Category: Primary
-    public static var primary: Color {
+
+    static var primary: Color {
         return Color(SC.darkCornflowerBlue.value)
     }
     
     // MARK: Category: secondary
-    public static var secondary: Color {
+
+    static var secondary: Color {
         return Color(SC.caramel.value)
     }
     
     // MARK: Category - Blue
-    public static var malibu: Color {
+
+    static var malibu: Color {
         return Color(SC.malibu.value)
     }
     
     // MARK: Category - Background
-    public static var backgroundDefault: Color {
+
+    static var backgroundDefault: Color {
         return Color(SC.backgroundDefault.value)
     }
     
     // MARK: Category - Text
-    public static var textPrimary: Color {
+
+    static var textPrimary: Color {
         return Color(SC.textPrimary.value)
     }
     
     // MARK: Category - Shadow
-    public static var shadow: Color {
+
+    static var shadow: Color {
         return Color(SC.shadow.value)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var posts: [Post] = []
-    @Published var profilePicture: URL = URL(string: "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg")!
+    @Published var profilePicture: URL = .init(string: "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg")!
     @Published var username: String = "The Rock"
     @Published var categories: [Categories] = [
         Categories.trending,

@@ -14,7 +14,7 @@ struct Report: Identifiable, Codable, Equatable {
     var submitter: String?
     var reasons: [String]?
     var date: Date?
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case reportUser
@@ -22,5 +22,4 @@ struct Report: Identifiable, Codable, Equatable {
         case reasons
         case date
     }
-    
 }

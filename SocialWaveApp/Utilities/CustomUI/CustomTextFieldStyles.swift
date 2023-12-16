@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BasicRoundedTextField: ViewModifier {
-    
     func body(content: Content) -> some View {
         content
             .foregroundColor(.white)

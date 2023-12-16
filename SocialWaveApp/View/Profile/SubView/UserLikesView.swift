@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct UserLikesView: View {
-    
     // MARK: - BODY
-    var body: some View{
-        ZStack{
+
+    var body: some View {
+        ZStack {
             Rectangle()
                 .foregroundColor(.yellow)
             #warning("UPDATE UI HERE")

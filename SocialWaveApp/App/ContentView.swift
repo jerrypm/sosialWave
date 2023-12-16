@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // MARK: PROPERTIES
+
     @AppStorage(SC.isShowTabBar.value) var isShowTabBar: Bool = true
     @State var selectedTab: Int = 0
 
