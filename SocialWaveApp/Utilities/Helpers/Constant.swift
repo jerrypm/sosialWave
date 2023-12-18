@@ -17,6 +17,7 @@ enum StringConstant: String {
     case pipe = "|"
     case space = "   "
     case tripleDots = "..."
+    case charaterS = "s"
     
     case homeTab = "Home"
     case searchTab = "Search"
@@ -68,7 +69,11 @@ enum StringConstant: String {
     case following
     case followers
     case myPost = "My Post"
+    case like = "Like"
     case likes = "Likes"
+    case likesby = "Likes by"
+    case likeUpost = "like your post"
+    case comments = "Comments"
     
     var value: String {
         return rawValue

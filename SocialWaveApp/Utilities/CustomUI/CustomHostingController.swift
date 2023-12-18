@@ -14,7 +14,7 @@ class CustomHostingController<Content: View>: UIHostingController<Content> {
         if let presentationController = presentationController as?
             UISheetPresentationController
         {
-            //Note: this large for full screen and medium for half bottom sheet
+            // Note: this large for full screen and medium for half bottom sheet
             presentationController.detents = [
                 .medium()
 //                .large()

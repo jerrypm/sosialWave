@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct CategoryView: View {
-    //MARK: - PROPERTIES
+    // MARK: - PROPERTIES
+
     @State var category: Categories
-    
-    //MARK: - BODY
+
+    // MARK: - BODY
+
     var body: some View {
         HStack {
             category.icon()
                 .foregroundColor(.primary)
-                
+
             Text(category.name())
                 .foregroundColor(.primary)
         }
@@ -25,9 +27,3 @@ struct CategoryView: View {
         .cornerRadius(10)
     }
 }
-
-//struct CategoryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CategoryView()
-//    }
-//}

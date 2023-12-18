@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct PostFooterView: View {
+    @State private var isSheetPresented = false
+    @State var post: Post
     
     // MARK: - BODY
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 16) {
-                
                 // Like button
                 HStack(spacing: 8) {
                     Image.heart
@@ -21,7 +23,7 @@ struct PostFooterView: View {
                         .frame(width: 20, height: 18)
                         .foregroundColor(.red)
                     
-                    Text("Like")
+                    Text(SC.like.value)
                 }
                 
                 // Comments
@@ -31,27 +33,32 @@ struct PostFooterView: View {
                         .frame(width: 20, height: 20)
                         .foregroundColor(.primary)
                     
-                    Text("Comments")
+                    Text(SC.comments.value)
+                }
+                .onTapGesture {
+                    isSheetPresented = true
                 }
                 
                 Spacer()
             }
             
-            // Likes Count
-            Text("\(2) like\("s")")
-                .font(.footnote)
-                .fontWeight(.light)
-                .padding(.leading, 4)
+            likeText(post.likes?.count ?? .zero)
         }
+        .padding(.horizontal, 10)
+        .halfSheet(showSheet: $isSheetPresented, sheeView: {
+            CommentsView()
+        })
         .onAppear {
             print("👍Like Test VIEW: ???")
         }
-        .padding(.horizontal, 10)
     }
-}
-
-struct PostFooterView_Previews: PreviewProvider {
-    static var previews: some View {
-        PostFooterView()
+    
+    // Likes Count
+    func likeText(_ likesCount: Int) -> some View {
+        let moreThanOne = likesCount <= 1 ? String.empty : String.charS
+        return Text("\(likesCount) \(SC.like.value)\(moreThanOne)")
+            .font(.footnote)
+            .fontWeight(.light)
+            .padding(.leading, 4)
     }
 }

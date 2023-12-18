@@ -5,18 +5,19 @@
 //  Created by Jerry Purnama Maulid on 28/10/23.
 //
 
-import SwiftUI
 import Kingfisher
+import SwiftUI
 
 struct PostBodyView: View {
-    
     // MARK: - PROPERTIES
+
     @State var topic: String?
     @State var category: String?
     @State var comments: String?
     @State var imageURL: URL?
-    
+
     // MARK: - BODY
+
     var body: some View {
         VStack {
             if let imageURL = imageURL {
@@ -48,7 +49,6 @@ struct PostBodyView: View {
                 Spacer()
             }
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 16))
-            
         }
         .background(Color.white)
         .cornerRadius(12)
@@ -63,11 +63,10 @@ struct PostBodyView_Previews: PreviewProvider {
                          category: "Food & Drink",
                          comments: "One of the better pizza spots around town",
                          imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")!)
-            .padding(.horizontal)
-            .frame(width: UIScreen.main.bounds.width)
+                .padding(.horizontal)
+                .frame(width: UIScreen.main.bounds.width)
             Spacer()
         }
         .background(.gray)
     }
 }
-

@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ChatViewChild: View {
     // MARK: - PROPERTIES
+
     let message: Message
     
     // MARK: - BODY
+
     var body: some View {
-        
         HStack(alignment: .top, spacing: 12) {
             HStack(alignment: .center, spacing: 0) {
                 Rectangle()
@@ -47,7 +48,6 @@ struct ChatViewChild: View {
             
             VStack(alignment: .leading, spacing: 4) {
                 HStack(alignment: .bottom) {
-                    
                     Text(message.senderName)
                         .font(.rubik(size: 16))
                         .foregroundColor(.white)
@@ -74,5 +74,4 @@ struct ChatViewChild: View {
         .frame(width: 411, alignment: .topLeading)
         .background(Color.primary)
     }
-    
 }

@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131EE3F02B2DEC8700FA6241 /* homePosts.json in Resources */ = {isa = PBXBuildFile; fileRef = 131EE3EF2B2DEC8700FA6241 /* homePosts.json */; };
+		131EE4082B2DF50600FA6241 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131EE4072B2DF50600FA6241 /* APIServices.swift */; };
+		131EE40A2B2DF59200FA6241 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131EE4092B2DF59200FA6241 /* Typealias.swift */; };
+		131EE40D2B2DF91600FA6241 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 131EE40C2B2DF91600FA6241 /* SwiftyJSON */; };
+		131EE40F2B2DF9E100FA6241 /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131EE40E2B2DF9E100FA6241 /* ResponseDecoder.swift */; };
+		13A1CCC32B301C7C0035FA11 /* profileUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 13A1CCC22B301C7C0035FA11 /* profileUser.json */; };
+		13A1CCC82B304ECD0035FA11 /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CCC72B304ECD0035FA11 /* CommentsView.swift */; };
 		13F57BEF2B2B643D00C1AEA8 /* CustomHalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F57BEE2B2B643D00C1AEA8 /* CustomHalfSheet.swift */; };
+		13F617ED2B2E8A47005A867C /* SearchItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F617EC2B2E8A47005A867C /* SearchItemsView.swift */; };
 		13FC57162B2BF1510077309A /* CustomHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC57152B2BF1510077309A /* CustomHostingController.swift */; };
 		BCED0D4D2AD997B4007D00C0 /* SocialWaveAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCED0D4C2AD997B4007D00C0 /* SocialWaveAppApp.swift */; };
 		BCED0D4F2AD997B4007D00C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCED0D4E2AD997B4007D00C0 /* ContentView.swift */; };
@@ -65,7 +73,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131EE3EF2B2DEC8700FA6241 /* homePosts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = homePosts.json; sourceTree = "<group>"; };
+		131EE4072B2DF50600FA6241 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		131EE4092B2DF59200FA6241 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		131EE40E2B2DF9E100FA6241 /* ResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
+		13A1CCC22B301C7C0035FA11 /* profileUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = profileUser.json; sourceTree = "<group>"; };
+		13A1CCC72B304ECD0035FA11 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
 		13F57BEE2B2B643D00C1AEA8 /* CustomHalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHalfSheet.swift; sourceTree = "<group>"; };
+		13F617EC2B2E8A47005A867C /* SearchItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsView.swift; sourceTree = "<group>"; };
 		13FC57152B2BF1510077309A /* CustomHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHostingController.swift; sourceTree = "<group>"; };
 		BCED0D492AD997B4007D00C0 /* SocialWaveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialWaveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCED0D4C2AD997B4007D00C0 /* SocialWaveAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialWaveAppApp.swift; sourceTree = "<group>"; };
@@ -127,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131EE40D2B2DF91600FA6241 /* SwiftyJSON in Frameworks */,
 				C42800C02AED2D4E000E6CB2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +150,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13A1CCC42B303BE40035FA11 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				13A1CCC72B304ECD0035FA11 /* CommentsView.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		13FC57172B2C0A6B0077309A /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +180,8 @@
 			children = (
 				C44B073E2AE684A800848400 /* Constant.swift */,
 				C411A6292AE6BD4E00FC0B8D /* Cache.swift */,
+				131EE4092B2DF59200FA6241 /* Typealias.swift */,
+				131EE40E2B2DF9E100FA6241 /* ResponseDecoder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -172,6 +198,8 @@
 		13FC57252B2C0CC90077309A /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				131EE3EF2B2DEC8700FA6241 /* homePosts.json */,
+				13A1CCC22B301C7C0035FA11 /* profileUser.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -263,6 +291,7 @@
 		BCED0D5E2AD99808007D00C0 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				131EE4072B2DF50600FA6241 /* APIServices.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -317,6 +346,7 @@
 			children = (
 				C42800C12AED4597000E6CB2 /* Parent */,
 				C42800C22AED45A8000E6CB2 /* Post */,
+				13A1CCC42B303BE40035FA11 /* Comment */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -415,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				C45151A02B090406009419E9 /* SearchSubView.swift */,
+				13F617EC2B2E8A47005A867C /* SearchItemsView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -437,6 +468,7 @@
 			name = SocialWaveApp;
 			packageProductDependencies = (
 				C42800BF2AED2D4E000E6CB2 /* Kingfisher */,
+				131EE40C2B2DF91600FA6241 /* SwiftyJSON */,
 			);
 			productName = SocialWaveApp;
 			productReference = BCED0D492AD997B4007D00C0 /* SocialWaveApp.app */;
@@ -468,6 +500,7 @@
 			mainGroup = BCED0D402AD997B4007D00C0;
 			packageReferences = (
 				C42800BE2AED2D4E000E6CB2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				131EE40B2B2DF91500FA6241 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = BCED0D4A2AD997B4007D00C0 /* Products */;
 			projectDirPath = "";
@@ -483,6 +516,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13A1CCC32B301C7C0035FA11 /* profileUser.json in Resources */,
+				131EE3F02B2DEC8700FA6241 /* homePosts.json in Resources */,
 				BCED0D542AD997B4007D00C0 /* Preview Assets.xcassets in Resources */,
 				BCED0D512AD997B4007D00C0 /* Assets.xcassets in Resources */,
 			);
@@ -495,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131EE4082B2DF50600FA6241 /* APIServices.swift in Sources */,
 				C411A6362AE6BF4D00FC0B8D /* NotificationModel.swift in Sources */,
 				C4370E2C2AF272B9001BE863 /* SearchViewModel.swift in Sources */,
 				C498FFA32B119F1B0038463B /* CustomTopTabBar.swift in Sources */,
@@ -514,6 +550,7 @@
 				C411A6382AE6BF9100FC0B8D /* ReportModel.swift in Sources */,
 				C40F963A2B1375830008AC54 /* Extension+Font.swift in Sources */,
 				C411A6322AE6BE4C00FC0B8D /* CustomButtonStyle.swift in Sources */,
+				13A1CCC82B304ECD0035FA11 /* CommentsView.swift in Sources */,
 				C40F963C2B1376220008AC54 /* MessageModel.swift in Sources */,
 				BCED0D6B2AD998C6007D00C0 /* Extension+Date.swift in Sources */,
 				C48E0EE52B13327C00D7260C /* UserPostView.swift in Sources */,
@@ -522,12 +559,14 @@
 				BCED0D632AD9984F007D00C0 /* RatingEnum.swift in Sources */,
 				BCED0D672AD99880007D00C0 /* NotificationsEnum.swift in Sources */,
 				C451519F2B0903C0009419E9 /* CustomSearchBar.swift in Sources */,
+				131EE40A2B2DF59200FA6241 /* Typealias.swift in Sources */,
 				C41BD0242AE95D0F00BBEB0E /* PostView.swift in Sources */,
 				13F57BEF2B2B643D00C1AEA8 /* CustomHalfSheet.swift in Sources */,
 				C4BD2F022AF22AF4001F4D7F /* CategoryView.swift in Sources */,
 				C411A6402AE6C5D500FC0B8D /* HomeView.swift in Sources */,
 				13FC57162B2BF1510077309A /* CustomHostingController.swift in Sources */,
 				BCED0D6D2AD998DF007D00C0 /* Extension+String.swift in Sources */,
+				13F617ED2B2E8A47005A867C /* SearchItemsView.swift in Sources */,
 				C44B073F2AE684A800848400 /* Constant.swift in Sources */,
 				BCED0D6F2AD998F3007D00C0 /* Extension+NSError.swift in Sources */,
 				C411A63A2AE6C38B00FC0B8D /* CustomFloatingTabbar.swift in Sources */,
@@ -540,6 +579,7 @@
 				C42800C42AED45BF000E6CB2 /* PostHeaderView.swift in Sources */,
 				C498FFA12B119EDA0038463B /* CustomTabBarButton.swift in Sources */,
 				C43AF66D2AF69ADF001C1BC4 /* ProfileViewModel.swift in Sources */,
+				131EE40F2B2DF9E100FA6241 /* ResponseDecoder.swift in Sources */,
 				C40F963E2B1376510008AC54 /* ChatViewModel.swift in Sources */,
 				C41BD0182AE909E100BBEB0E /* CustomToolBar.swift in Sources */,
 				C40F96412B13770E0008AC54 /* ChatViewChild.swift in Sources */,
@@ -751,6 +791,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		131EE40B2B2DF91500FA6241 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		C42800BE2AED2D4E000E6CB2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -762,6 +810,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		131EE40C2B2DF91600FA6241 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 131EE40B2B2DF91500FA6241 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		C42800BF2AED2D4E000E6CB2 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C42800BE2AED2D4E000E6CB2 /* XCRemoteSwiftPackageReference "Kingfisher" */;

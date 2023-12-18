@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ChatView: View {
     // MARK: - PROPERTIES
+
     @StateObject var viewModel = ChatViewModel()
 
     // MARK: - BODY
+
     var body: some View {
         NavigationView {
             VStack {

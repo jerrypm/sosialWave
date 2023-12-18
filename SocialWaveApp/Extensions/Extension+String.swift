@@ -15,6 +15,10 @@ public extension String {
     static var pipe: String {
         return SC.pipe.value
     }
+    
+    static var charS: String {
+        return SC.charaterS.value
+    }
 
     internal func capitalizeFirstLetterOnly() -> String {
         let lowercasedInput = self.lowercased()

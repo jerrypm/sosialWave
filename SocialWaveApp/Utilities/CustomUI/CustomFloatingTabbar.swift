@@ -11,7 +11,7 @@ struct FloatingTabbar: View {
     // MARK: - PROPERTIES
 
     @Binding var selected: Int
-    
+
     // MARK: - BODY
 
     var body: some View {
@@ -25,7 +25,7 @@ struct FloatingTabbar: View {
                     .foregroundColor(selected == 0 ? .primary : .gray)
             }
             Spacer(minLength: 15)
-            
+
             //: Search
             Button {
                 selected = 1
@@ -35,7 +35,7 @@ struct FloatingTabbar: View {
                     .foregroundColor(selected == 1 ? .primary : .gray)
             }
             Spacer(minLength: 15)
-            
+
             //: Chat
             Button {
                 selected = 2
@@ -45,7 +45,7 @@ struct FloatingTabbar: View {
                     .foregroundColor(selected == 2 ? .primary : .gray)
             }
             Spacer(minLength: 15)
-            
+
             //: Profile
             Button {
                 selected = 3

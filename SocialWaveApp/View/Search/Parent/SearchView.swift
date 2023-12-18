@@ -12,15 +12,18 @@ struct SearchView: View {
 
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     @StateObject var viewModel = SearchViewModel()
+    #warning("delete soon or add bottom sheer")
     @State private var isSheetPresented = false
     @State private var searchQuery = String.empty
+    @State private var isActive = false
 
     // MARK: - BODY
 
     var body: some View {
         NavigationView {
             VStack {
-                Button(action: { isSheetPresented.toggle() }) {
+                navigationLink()
+                Button(action: { isActive.toggle() }) {
                     SearchBarView()
                 }
 
@@ -39,12 +42,16 @@ struct SearchView: View {
             .padding(.horizontal, 16)
             .background(Color.primary)
             .listStyle(.plain)
-            .halfSheet(showSheet: $isSheetPresented) {
+            .halfSheet(showSheet: $isSheetPresented) { #warning("delete soon or add bottom sheer")
                 CustomBottomSheetView()
                     .frame(height: UIScreen.main.bounds.height * 1 / 3)
                     .background(Color.black.opacity(0.3))
             }
         }
+    }
+
+    private func navigationLink() -> some View {
+        NavigationLink(destination: SearchItemsView(), isActive: $isActive) { EmptyView() }.opacity(0)
     }
 }
 
