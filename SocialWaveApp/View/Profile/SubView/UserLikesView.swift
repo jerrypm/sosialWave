@@ -67,7 +67,7 @@ struct UserLikesView: View {
 
     func determineTimeLabel(for user: String) -> String {
         // Implement your logic here to return "now", "yesterday", or a specific date
-        return "now" // Replace with actual logic
+        return SC.now.value // Replace with actual logic
     }
 }
 

@@ -47,7 +47,7 @@ struct ChatViewChild: View {
                         .fontWeight(.bold)
                     Spacer()
 
-                    Text("Now")
+                    Text(SC.now.value)
                         .font(.rubik(size: 12))
                         .kerning(0.14)
                         .foregroundColor(.white)

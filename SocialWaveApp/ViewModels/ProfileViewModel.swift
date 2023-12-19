@@ -15,7 +15,7 @@ class ProfileViewModel: ObservableObject {
     @Published var username: String = "The Rock"
     @Published var storiesData = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     @Published var userImageURL = "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"
-    @Published var userData: User?
+    @Published var userData: UserModel?
 
     let dummyImages: [ImageModel] = [
         ImageModel(imageUrl: "https://www.researchgate.net/profile/Peter-Siemund/publication/329755169/figure/fig1/AS:769346448130048@1560437895151/Written-task-in-English-Picture-story-Gut-gemeint-English-translation-Good.png"),
@@ -30,7 +30,7 @@ class ProfileViewModel: ObservableObject {
     ]
 
     init() {
-        userData = User(
+        userData = UserModel(
             id: "1212",
             name: "Dr. Jhon",
             username: "",

@@ -10,7 +10,7 @@ import SwiftUI
 struct UserHeaderView: View {
     // MARK: - PROPERTIES
 
-    @State var userData: User?
+    @State var userData: UserModel?
     
     // MARK: - BODY
 

@@ -6,22 +6,9 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-struct User: Identifiable, Codable, Hashable {
-    var id: String
-    var name: String
-    var username: String = ""
-    var profileImageUrl: String?
-    var email: String
-    var country: String = ""
-    var bio: String = ""
-    var following: [String]?
-    var followers: [String]?
-    var numberOfPosts: Int?
-    var blocked: [String]?
-    var badgeCount: Int?
-    var token: String?
-
+struct UserModel: Identifiable, Codable, Hashable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -37,4 +24,20 @@ struct User: Identifiable, Codable, Hashable {
         case badgeCount
         case token
     }
+
+    var id: String
+    var name: String
+    var username: String = ""
+    var profileImageUrl: String?
+    var email: String
+    var country: String = ""
+    var bio: String = ""
+    var following: [String]?
+    var followers: [String]?
+    var numberOfPosts: Int?
+    var blocked: [String]?
+    var badgeCount: Int?
+    var token: String?
+    
+    
 }

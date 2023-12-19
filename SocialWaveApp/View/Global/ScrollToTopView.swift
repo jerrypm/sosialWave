@@ -19,7 +19,7 @@ struct ScrollToTopButton: View {
                 Button(action: {
                     onScrollToTop()
                 }) {
-                    Image(systemName: "arrow.up.circle.fill")
+                    Image.arrowUpCircle
                         .resizable()
                         .frame(width: 32, height: 32)
                         .foregroundColor(.primary.opacity(0.9))

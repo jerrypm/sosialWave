@@ -13,7 +13,6 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel(homePostsAPIService: HomePostsAPIService())
     @State private var heartSize: CGFloat = 0
     @State private var showLikeAnimation: Bool = false
-
     @State var scrollViewOffset: CGFloat = 0
     @State var startOffset: CGFloat = 0
 

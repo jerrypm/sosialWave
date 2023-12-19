@@ -46,6 +46,10 @@ public extension Image {
         return Image(systemName: SC.personCircle.value)
     }
     
+    static var arrowUpCircle: Image {
+        return Image(systemName: SC.arrowUpCircleFill.value)
+    }
+    
     // MARK: Assets
     
     static var imageTitle: Image {

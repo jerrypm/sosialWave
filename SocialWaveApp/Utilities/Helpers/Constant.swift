@@ -46,6 +46,7 @@ enum StringConstant: String {
     case heartFill = "heart.fill"
     case personCircle = "person.circle"
     case photo
+    case arrowUpCircleFill = "arrow.up.circle.fill"
     
     // MARK: - Image Assets
 
@@ -79,6 +80,9 @@ enum StringConstant: String {
     case comments = "Comments"
     case noCommentsYet = "No comments yet"
     case messages = "Messages"
+    
+    case now = "now"
+    case yesterday = "yesterday"
     
     var value: String {
         return rawValue
