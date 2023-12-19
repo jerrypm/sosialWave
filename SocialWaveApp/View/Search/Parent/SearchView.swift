@@ -11,9 +11,7 @@ struct SearchView: View {
     // MARK: - PROPERTIES
 
     let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
-    @StateObject var viewModel = SearchViewModel()
-    #warning("delete soon or add bottom sheer")
-    @State private var isSheetPresented = false
+    @StateObject var viewModel = SearchViewModel(searchAPI: SearchAPIService())
     @State private var searchQuery = String.empty
     @State private var isActive = false
 
@@ -29,11 +27,11 @@ struct SearchView: View {
 
                 ScrollView(showsIndicators: false) {
                     LazyVGrid(columns: columns, spacing: 5) {
-                        ForEach(viewModel.searchItems, id: \.self) { text in
+                        ForEach(viewModel.searchResults, id: \.self) { item in
                             let screenWidth = UIScreen.main.bounds.width
                             let totalSpacing = CGFloat(columns.count - 1) * 10
                             let adjustedWidth = (screenWidth - totalSpacing - 32) / CGFloat(columns.count)
-                            CardView(imageURL: text, width: adjustedWidth)
+                            CardView(imageURL: item.postImageURL, width: adjustedWidth)
                                 .padding(.horizontal, 5)
                         }
                     }
@@ -42,11 +40,7 @@ struct SearchView: View {
             .padding(.horizontal, 16)
             .background(Color.primary)
             .listStyle(.plain)
-            .halfSheet(showSheet: $isSheetPresented) { #warning("delete soon or add bottom sheer")
-                CustomBottomSheetView()
-                    .frame(height: UIScreen.main.bounds.height * 1 / 3)
-                    .background(Color.black.opacity(0.3))
-            }
+            .onAppear(perform: viewModel.fetchSearch)
         }
     }
 
@@ -58,20 +52,5 @@ struct SearchView: View {
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
         SearchView()
-    }
-}
-
-#warning("delete soon")
-// will delete soon bcz this fill from bottom sheet
-struct CustomBottomSheetView: View {
-    var body: some View {
-        VStack {
-            Text("Custom Bottom Sheet")
-                .font(.largeTitle)
-            Spacer()
-        }
-        .frame(maxWidth: .infinity, maxHeight: 300)
-        .background(Color.gray.opacity(0.2))
-        .cornerRadius(20)
     }
 }

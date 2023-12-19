@@ -18,7 +18,7 @@ struct AppNotification: Identifiable, Codable {
     var submitterName: String?
 
     var typeEnum: NotificationType {
-        NotificationType(rawValue: self.type ?? "") ?? .Comment
+        NotificationType(rawValue: self.type ?? .empty) ?? .Comment
     }
 
     enum CodingKeys: String, CodingKey {

@@ -13,7 +13,7 @@ struct LogoToolbarImage: View {
     // MARK: - BODY
 
     var body: some View {
-        Image(SC.imageTitle.value)
+        Image.imageTitle
             .resizable()
             .scaledToFit()
             .frame(width: UIScreen.screenWidth - 160, height: 40, alignment: .center)

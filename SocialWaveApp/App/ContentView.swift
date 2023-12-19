@@ -11,6 +11,8 @@ struct ContentView: View {
     // MARK: PROPERTIES
 
     @AppStorage(SC.isShowTabBar.value) var isShowTabBar: Bool = true
+    @StateObject var homeViewModel = HomeViewModel(homePostsAPIService: HomePostsAPIService())
+    @StateObject var searchViewModel = SearchViewModel(searchAPI: SearchAPIService())
     @State var selectedTab: Int = 0
 
     var body: some View {
@@ -29,6 +31,8 @@ struct ContentView: View {
             .onAppear {
                 isShowTabBar = true
                 UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+                homeViewModel.fetchPosts()
+                searchViewModel.fetchSearch()
             }
 
             if isShowTabBar {

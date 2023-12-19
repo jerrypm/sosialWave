@@ -1,0 +1,60 @@
+{
+  "chats": [
+    {
+      "user": "Yuna",
+      "profile_picture": "https://randomuser.me/api/portraits/women/78.jpg",
+      "date": "2023-12-18",
+      "last_message": "hey bro, my cat can backflip, you wanna see?",
+      "conversations": [
+        {
+          "date": "2023-12-16",
+          "type": "receive",
+          "message": "hey bro, my cat can backflip, you wanna see?"
+        },
+        {
+          "date": "2023-12-16",
+          "type": "send",
+          "message": "really?"
+        },
+        {
+          "date": "2023-12-18",
+          "type": "receive",
+          "message": "yeah"
+        },
+        {
+          "date": "2023-12-18",
+          "type": "send",
+          "message": "no"
+        },
+        {
+          "date": "2023-12-16",
+          "type": "receive",
+          "message": "really?"
+        },
+        {
+          "date": "2023-12-16",
+          "type": "send",
+          "message": "no absolutely"
+        }
+      ]
+    },
+    {
+      "user": "Mike Lou",
+      "date": "2023-12-18",
+      "profile_picture": "https://randomuser.me/api/portraits/men/78.jpg",
+      "last_message":  "Halo, how are you?",
+      "conversations": [
+        {
+          "date": "2023-12-18",
+          "type": "receive",
+          "message": "Halo, how are you?"
+        },
+        {
+          "date": "2023-12-20",
+          "type": "send",
+          "message": "I'm fine, and leave me alone"
+        }
+      ]
+    }
+  ]
+}

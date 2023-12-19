@@ -8,11 +8,22 @@
             "imageUrl": "https://www.astronauts.id/blog/wp-content/uploads/2023/03/Resep-Rendang-Daging-Sapi-Untuk-Lebaran-Gurih-dan-Nikmat.jpg",
             "category": "food",
             "review": 5,
-            "comments": "I like this food!, I Want more like this, More and more, Can I Buy this cafe",
+            "description": "I like this food!, I Want more like this, More and more, Can I Buy this cafe",
             "createdBy": "John Doe",
             "date": "2023-12-16 14:57:38",
             "likes": ["user1", "user2"],
-            "numberOfComments": 2
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "Wow I know that food",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "Amazing Shoot",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "2",
@@ -21,11 +32,37 @@
             "imageUrl": "https://images.pexels.com/photos/2605192/pexels-photo-2605192.jpeg",
             "category": "place",
             "review": 4,
-            "comments": "With Shark, Wow!",
+            "description": "With Shark, Wow!",
             "createdBy": "Rock Smith",
             "date": "2023-12-16 14:57:38",
             "likes": ["user3", "user4", "user5"],
-            "numberOfComments": 3
+            "comments": [
+               {
+                 "user": "Usman",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "Hello fire",
+                 "comment": "Where the shark ?",
+                 "profile_picture": "https://example.com/image3.jpg"
+               },
+               {
+                 "user": "HelloFire",
+                 "comment": "Where the shark ?",
+                 "profile_picture": "https://example.com/image3.jpg"
+               },
+               {
+                 "user": "mike92",
+                 "comment": "Sir, which is the hotel..I am going in Jan end",
+                 "profile_picture": "https://example.com/image3.jpg"
+               },
+               {
+                 "user": "kulkul",
+                 "comment": "Can we meet sir",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "3",
@@ -34,11 +71,11 @@
             "imageUrl": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg",
             "category": "music",
             "review": 4,
-            "comments": "Good Music!",
+            "description": "Good Music!",
             "createdBy": "Alex Johnson",
             "date": "2023-12-16 14:57:38",
             "likes": ["user1"],
-            "numberOfComments": 1
+            "comments": []
         },
         {
             "id": "4",
@@ -47,11 +84,22 @@
             "imageUrl": "https://images.pexels.com/photos/19451775/pexels-photo-19451775.jpeg",
             "category": "outdoor",
             "review": 4,
-            "comments": "Amazing views and great exercise!",
+            "description": "Amazing views and great exercise!",
             "createdBy": "Michaely Lee",
             "date": "2023-12-16 15:02:00",
             "likes": ["user6", "user7"],
-            "numberOfComments": 2
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "This is the third comment.",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "5",
@@ -60,11 +108,22 @@
             "imageUrl": "https://images.pexels.com/photos/14638945/pexels-photo-14638945.jpeg",
             "category": "art",
             "review": 5,
-            "comments": "Inspirational pieces, a must-visit for art lovers.",
+            "description": "Inspirational pieces, a must-visit for art lovers.",
             "createdBy": "Evansdes",
             "date": "2023-12-16 15:04:22",
             "likes": ["user8", "user9", "user10"],
-            "numberOfComments": 3
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "This is the third comment.",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "6",
@@ -73,11 +132,22 @@
             "imageUrl": "https://images.pexels.com/photos/3907022/pexels-photo-3907022.jpeg",
             "category": "technology",
             "review": 3,
-            "comments": "Great insights into the future of tech.",
+            "description": "Great insights into the future of tech.",
             "createdBy": "Gracia Brown",
             "date": "2023-12-16 15:06:45",
             "likes": ["user11", "user12"],
-            "numberOfComments": 2
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "This is the third comment.",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "7",
@@ -86,11 +156,22 @@
             "imageUrl": "https://images.pexels.com/photos/19460427/pexels-photo-19460427.jpeg",
             "category": "food",
             "review": 5,
-            "comments": "Fresh produce and friendly vendors!",
+            "description": "Fresh produce and friendly vendors!",
             "createdBy": "Laura Wilson",
             "date": "2023-12-16 15:08:30",
             "likes": ["user2", "user13"],
-            "numberOfComments": 4
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "This is the third comment.",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "8",
@@ -99,11 +180,22 @@
             "imageUrl": "https://images.pexels.com/photos/2402777/pexels-photo-2402777.jpeg",
             "category": "sports",
             "review": 4,
-            "comments": "Well organized and enthusiastic crowd.",
+            "description": "Well organized and enthusiastic crowd.",
             "createdBy": "Tony Young",
             "date": "2023-12-16 15:10:15",
             "likes": ["user14", "user15"],
-            "numberOfComments": 3
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "This is the third comment.",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "9",
@@ -112,11 +204,22 @@
             "imageUrl": "https://images.pexels.com/photos/711009/pexels-photo-711009.jpeg",
             "category": "literature",
             "review": 4,
-            "comments": "Engaging discussion and friendly members.",
+            "description": "Engaging discussion and friendly members.",
             "createdBy": "Emma Martinez",
             "date": "2023-12-16 15:12:00",
             "likes": ["user16", "user1"],
-            "numberOfComments": 2
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "This is the third comment.",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         },
         {
             "id": "10",
@@ -125,11 +228,22 @@
             "imageUrl": "https://images.pexels.com/photos/19423053/pexels-photo-19423053.jpeg",
             "category": "food",
             "review": 5,
-            "comments": "Learnt some great new recipes!",
+            "description": "Learnt some great new recipes!",
             "createdBy": "Olivia Jones",
             "date": "2023-12-16 15:14:45",
             "likes": ["user3", "user17"],
-            "numberOfComments": 5
+            "comments": [
+               {
+                 "user": "Dika",
+                 "comment": "This is the first comment.",
+                 "profile_picture": "https://example.com/image1.jpg"
+               },
+               {
+                 "user": "haru joum",
+                 "comment": "This is the third comment.",
+                 "profile_picture": "https://example.com/image3.jpg"
+               }
+             ]
         }
 
     ]

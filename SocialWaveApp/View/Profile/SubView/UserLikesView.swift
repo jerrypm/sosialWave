@@ -32,7 +32,7 @@ struct UserLikesView: View {
                 ForEach(likedUsers, id: \.self) { user in
                     VStack {
                         HStack {
-                            Image(systemName: SC.heart.value)
+                            Image.heart
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(.white)

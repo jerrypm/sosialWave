@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserDetailHeader: View {
+struct UserHeaderView: View {
     // MARK: - PROPERTIES
 
     @State var userData: User?
@@ -58,6 +58,6 @@ struct UserDetailHeader: View {
 
 struct UserDetailHeader_Previews: PreviewProvider {
     static var previews: some View {
-        UserDetailHeader()
+        UserHeaderView()
     }
 }

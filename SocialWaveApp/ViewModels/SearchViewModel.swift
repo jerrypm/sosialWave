@@ -10,21 +10,24 @@ import Foundation
 class SearchViewModel: ObservableObject {
     @Published var searchText: String = .empty
     @Published var showCancelButton: Bool = false
-    @Published var searchItems: [String] = []
+    @Published var searchResults: [SearchResultModel] = []
 
-    init() {
-        searchItems = [
-            "post ikan",
-            "post telur",
-            "post data kami",
-            "post ayam",
-            "post sapi",
-            "post sirup",
-            "post rush",
-        ]
+    private let searchAPIService: ISearchAPIService
+
+    init(searchAPI: ISearchAPIService) {
+        searchAPIService = searchAPI
     }
 
-    func search() {
-        // Implement search logic here
+    func fetchSearch() {
+        searchAPIService.getListSearch { [weak self] response in
+            guard let self = self else { return }
+            let postsData = response["search_results"].arrayValue
+            self.searchResults = postsData.compactMap { item in
+                SearchResultModel(data: item)
+            }
+
+        } failed: { message in
+            print("Error \(message)")
+        }
     }
 }

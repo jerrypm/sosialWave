@@ -29,7 +29,7 @@ struct ProfileView: View {
                             .frame(width: 110, height: 110, alignment: .center)
 
                         // User Header
-                        UserDetailHeader(userData: viewModel.userData)
+                        UserHeaderView(userData: viewModel.userData)
 
                         // Custom Top TabBar
                         CustomTopTabBar(tabIndex: $tabIndex)

@@ -29,7 +29,7 @@ struct SearchSubView: View {
         }
         .navigationTitle(SC.searchTab.value)
         .onAppear {
-            // Anda dapat melakukan pencarian awal di sini atau memuat data default.
+            #warning("here")
         }
     }
 }

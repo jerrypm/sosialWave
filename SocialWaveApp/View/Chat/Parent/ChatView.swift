@@ -10,24 +10,28 @@ import SwiftUI
 struct ChatView: View {
     // MARK: - PROPERTIES
 
-    @StateObject var viewModel = ChatViewModel()
+    @StateObject var viewModel = ChatViewModel(chatAPI: ChatAPIService())
 
     // MARK: - BODY
 
     var body: some View {
         NavigationView {
             VStack {
-                TitleToolBar(title: SC.chatTab.value)
+                TitleToolBar(title: SC.messages.value)
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: 0) {
-                        ForEach(viewModel.sampleMessages, id: \.senderName) { message in
+                        ForEach(viewModel.messages, id: \.id) { message in
                             ChatViewChild(message: message)
+                            Divider()
+                                .background(Color.white.opacity(0.5))
                         }
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
             }
+            .padding()
             .background(Color.primary)
+            .onAppear(perform: viewModel.featchChats)
         }
     }
 }

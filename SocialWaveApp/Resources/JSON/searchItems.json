@@ -1,0 +1,85 @@
+{
+  "search_results": [
+    {
+      "username": "john_doe",
+      "full_name": "John Doe",
+      "profile_pic_url": "https://example.com/john_doe_profile_pic.jpg",
+      "bio": "Photographer | Explorer | Coffee Lover",
+      "is_verified": true,
+      "post_image_url": "https://images.pexels.com/photos/13294518/pexels-photo-13294518.jpeg"
+    },
+    {
+      "username": "jane_smith",
+      "full_name": "Jane Smith",
+      "profile_pic_url": "https://example.com/jane_smith_profile_pic.jpg",
+      "bio": "Travel Enthusiast | Foodie | Dog Mom",
+      "is_verified": false,
+      "post_image_url": "https://images.pexels.com/photos/2316745/pexels-photo-2316745.jpeg"
+    },
+    {
+      "username": "alex_carter",
+      "full_name": "Alex Carter",
+      "profile_pic_url": "https://example.com/alex_carter_profile_pic.jpg",
+      "bio": "Fitness Freak | Entrepreneur | Nature Lover",
+      "is_verified": true,
+      "post_image_url": "https://images.pexels.com/photos/19406578/pexels-photo-19406578.jpeg"
+    },
+    {
+      "username": "emily_wilson",
+      "full_name": "Emily Wilson",
+      "profile_pic_url": "https://example.com/emily_wilson_profile_pic.jpg",
+      "bio": "Art Lover | Bookworm | Dreamer",
+      "is_verified": false,
+      "post_image_url": "https://images.pexels.com/photos/15949283/pexels-photo-15949283.jpeg"
+    },
+    {
+      "username": "chris_miller",
+      "full_name": "Chris Miller",
+      "profile_pic_url": "https://example.com/chris_miller_profile_pic.jpg",
+      "bio": "Tech Geek | Gamer | Movie Buff",
+      "is_verified": false,
+      "post_image_url": "https://images.pexels.com/photos/7241294/pexels-photo-7241294.jpeg"
+    },
+    {
+      "username": "lisa_jackson",
+      "full_name": "Lisa Jackson",
+      "profile_pic_url": "https://example.com/lisa_jackson_profile_pic.jpg",
+      "bio": "Fashionista | Traveler | Coffee Addict",
+      "is_verified": true,
+      "post_image_url": "https://images.pexels.com/photos/5582940/pexels-photo-5582940.jpeg"
+    },
+    {
+      "username": "ryan_gomez",
+      "full_name": "Ryan Gomez",
+      "profile_pic_url": "https://example.com/ryan_gomez_profile_pic.jpg",
+      "bio": "Musician | Nature Photographer | Adventure Seeker",
+      "is_verified": false,
+      "post_image_url": "https://images.pexels.com/photos/555345/pexels-photo-555345.jpeg"
+    },
+    {
+      "username": "sarah_roberts",
+      "full_name": "Sarah Roberts",
+      "profile_pic_url": "https://example.com/sarah_roberts_profile_pic.jpg",
+      "bio": "Animal Lover | Yoga Enthusiast | Positive Vibes Only",
+      "is_verified": true,
+      "post_image_url": "https://images.pexels.com/photos/1378849/pexels-photo-1378849.jpeg"
+    },
+    {
+      "username": "michael_hill",
+      "full_name": "Michael Hill",
+      "profile_pic_url": "https://example.com/michael_hill_profile_pic.jpg",
+      "bio": "Food Blogger | Chef in the Making | Fitness Freak",
+      "is_verified": false,
+      "post_image_url": "https://images.pexels.com/photos/4686830/pexels-photo-4686830.jpeg"
+    },
+    {
+      "username": "olivia_green",
+      "full_name": "Olivia Green",
+      "profile_pic_url": "https://example.com/olivia_green_profile_pic.jpg",
+      "bio": "Book Lover | Dreamer | Coffee Enthusiast",
+      "is_verified": true,
+      "post_image_url": "https://images.pexels.com/photos/19468314/pexels-photo-19468314.jpeg"
+    }
+  ]
+}
+

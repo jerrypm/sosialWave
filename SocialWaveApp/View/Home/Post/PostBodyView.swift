@@ -13,7 +13,7 @@ struct PostBodyView: View {
 
     @State var topic: String?
     @State var category: String?
-    @State var comments: String?
+    @State var description: String?
     @State var imageURL: URL?
 
     // MARK: - BODY
@@ -23,6 +23,21 @@ struct PostBodyView: View {
             if let imageURL = imageURL {
                 KFImage(imageURL)
                     .resizable()
+                    .downsampling(size: CGSize(width: 500, height: 500))
+                    .cacheOriginalImage()
+                    .placeholder {
+                        ZStack {
+                            Image.photo
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                                .opacity(0.3)
+
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle())
+                                .scaleEffect(2)
+                        }
+                    }
                     .scaledToFit()
                     .frame(maxWidth: .infinity)
             } else {
@@ -34,15 +49,15 @@ struct PostBodyView: View {
             HStack(spacing: 22) {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 4) {
-                        Text("\(topic ?? ""),")
+                        Text("\(topic ?? .empty),")
                             .font(.system(size: 16, weight: .bold))
                             .frame(height: 3)
-                        Text(category ?? "")
+                        Text(category ?? .empty)
                             .font(.system(size: 14))
                             .foregroundColor(.blue)
                     }
                     Spacer()
-                    Text(comments ?? "")
+                    Text(description ?? .empty)
                         .font(.system(size: 14))
                         .foregroundColor(.gray)
                 }
@@ -61,7 +76,7 @@ struct PostBodyView_Previews: PreviewProvider {
             Spacer()
             PostBodyView(topic: "Antonio's pizzeria",
                          category: "Food & Drink",
-                         comments: "One of the better pizza spots around town",
+                         description: "One of the better pizza spots around town",
                          imageURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg")!)
                 .padding(.horizontal)
                 .frame(width: UIScreen.main.bounds.width)

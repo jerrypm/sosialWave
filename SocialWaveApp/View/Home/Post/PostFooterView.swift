@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct PostFooterView: View {
+    // MARK: - PROPERTIES
+
     @State private var isSheetPresented = false
-    @State var post: Post
+    @State var post: PostModel
+    var onTap: () -> Void
     
     // MARK: - BODY
 
@@ -24,6 +27,9 @@ struct PostFooterView: View {
                         .foregroundColor(.red)
                     
                     Text(SC.like.value)
+                }
+                .onTapGesture {
+                    onTap()
                 }
                 
                 // Comments
@@ -46,11 +52,8 @@ struct PostFooterView: View {
         }
         .padding(.horizontal, 10)
         .halfSheet(showSheet: $isSheetPresented, sheeView: {
-            CommentsView()
+            CommentsView(comments: post.comments)
         })
-        .onAppear {
-            print("👍Like Test VIEW: ???")
-        }
     }
     
     // Likes Count

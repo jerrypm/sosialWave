@@ -48,7 +48,7 @@ struct PostHeaderView: View {
 
 struct PostHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        PostHeaderView(profilePicture: .constant( "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg"),
+        PostHeaderView(profilePicture: .constant("https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg"),
                        username: .constant("Tom Solley"),
                        postDate: Date())
     }

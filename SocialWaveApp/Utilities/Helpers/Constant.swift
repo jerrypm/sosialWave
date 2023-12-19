@@ -28,6 +28,7 @@ enum StringConstant: String {
 
     case isShowTabBar
     case datePostFormat = "d MMM"
+    case scrollID = "scroll_to_top"
     
     // MARK: - Font Style
 
@@ -43,6 +44,8 @@ enum StringConstant: String {
     case close = "xmark.circle"
     case heart
     case heartFill = "heart.fill"
+    case personCircle = "person.circle"
+    case photo
     
     // MARK: - Image Assets
 
@@ -74,6 +77,8 @@ enum StringConstant: String {
     case likesby = "Likes by"
     case likeUpost = "like your post"
     case comments = "Comments"
+    case noCommentsYet = "No comments yet"
+    case messages = "Messages"
     
     var value: String {
         return rawValue

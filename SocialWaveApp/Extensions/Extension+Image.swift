@@ -38,7 +38,19 @@ public extension Image {
         return Image(systemName: SC.heartFill.value)
     }
     
+    static var photo: Image {
+        return Image(systemName: SC.photo.value)
+    }
+    
+    static var personCircle: Image {
+        return Image(systemName: SC.personCircle.value)
+    }
+    
     // MARK: Assets
+    
+    static var imageTitle: Image {
+        return Image(SC.imageTitle.value)
+    }
 
     // Tabbar
     static var home: Image {

@@ -8,50 +8,42 @@
 import SwiftUI
 
 struct CommentsView: View {
-    let comments: [String] = [
-        "Wow I know that food",
-        "Amazing Shoot",
-        "where was this taken?",
-    ]
-    
+    // MARK: - PROPERTIES
+
+    let comments: [CommentPost]?
+
+    // MARK: - BODY
+
     var body: some View {
         VStack {
             // header
             HStack {
-                Text("Comments")
+                Text(SC.comments.value)
                     .font(.headline)
                     .padding(EdgeInsets(top: 20, leading: 20, bottom: 0, trailing: 20))
-                
+
                 Spacer()
             }
-            
-            List(comments, id: \.self) { comment in
-                CommentRow(comment: comment)
-            }
-        }
-    }
-}
 
-struct CommentRow: View {
-    let comment: String
-    
-    var body: some View {
-        HStack {
-            Image(systemName: "person.circle")
-                .resizable()
-                .frame(width: 20, height: 20)
-                .clipShape(Circle())
-                .padding()
-            
-            Text(comment)
-                .lineLimit(nil)
-            
+            if let comments = comments, !comments.isEmpty {
+                ScrollView(showsIndicators: false) {
+                    LazyVStack(spacing: 0) {
+                        ForEach(comments, id: \.self) { comment in
+                            CommentRow(username: comment.user, comment: comment.comment, profileImage: comment.profilePicture)
+                                .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
+                        }
+                    }
+                }
+            } else {
+                Text(SC.noCommentsYet.value)
+                    .padding()
+            }
+
             Spacer()
         }
-        .padding(.vertical, 8)
     }
 }
 
-#Preview {
-    CommentsView()
-}
+// #Preview {
+//    CommentsView()
+// }

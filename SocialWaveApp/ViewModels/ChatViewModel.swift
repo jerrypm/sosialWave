@@ -8,13 +8,23 @@
 import Foundation
 
 class ChatViewModel: ObservableObject {
-    @Published var sampleMessages: [Message] = [
-        Message(senderName: "Kona", timestamp: Date(), messageText: "Hi Yuna, I had a great time at the dog park..."),
-        Message(senderName: "Yuna", timestamp: Date(), messageText: "That's awesome! My dog had a great time too."),
-        // Add more sample messages as needed
-    ]
+    @Published var messages: [ChatModel] = []
+    private let chatAPIService: IChatAPIService
 
-    init() {
-        // here
+    init(chatAPI: IChatAPIService) {
+        chatAPIService = chatAPI
+    }
+
+    func featchChats() {
+        chatAPIService.getListChats { [weak self] response in
+            guard let self = self else { return }
+            let chatsData = response["chats"].arrayValue
+            self.messages = chatsData.compactMap { item in
+                ChatModel(data: item)
+            }
+
+        } failed: { message in
+            print("Error \(message)")
+        }
     }
 }

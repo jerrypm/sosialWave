@@ -17,16 +17,24 @@ struct CardView: View {
     // MARK: - BODY
 
     var body: some View {
-        KFImage(URL(string: imageURL ?? ""))
+        KFImage(URL(string: imageURL ?? .empty))
             .resizable()
+            .downsampling(size: CGSize(width: 250, height: 250))
+            .cacheOriginalImage()
             .placeholder {
-                Image(systemName: "photo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50, height: 50)
-                    .opacity(0.3)
+                ZStack {
+                    Image.photo
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50, height: 50)
+                        .opacity(0.3)
+
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .scaleEffect(2)
+                }
             }
-            .aspectRatio(contentMode: .fill)
+            .scaledToFill()
             .frame(width: width, height: 150)
             .background(Color.white)
             .cornerRadius(6)
