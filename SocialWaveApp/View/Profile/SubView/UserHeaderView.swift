@@ -10,54 +10,128 @@ import SwiftUI
 struct UserHeaderView: View {
     // MARK: - PROPERTIES
 
+    @AppStorage(SC.userID.value) var userID: String = .empty
+    
     @State var userData: UserModel?
+    @State private var isBioExpanded: Bool = false
+    @State private var showMoreButtonText: String = SC.showMore.value
     
     // MARK: - BODY
 
     var body: some View {
-        VStack(spacing: 16) {
-            Text(userData?.name ?? .empty)
-                .font(.rubik(size: 24))
-                .kerning(0.24)
-                .multilineTextAlignment(.center)
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, alignment: .top)
-            
+        VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .center, spacing: 8) {
-                Text(userData?.country ?? .empty)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                ImageProfileView(imageProfileURL: userData?.profileImageUrl)
+                    .padding(.vertical, 12)
+                    .frame(width: 74, height: 74, alignment: .leading)
                 
-                Text(String.pipe)
-                    .fontWeight(.medium)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                Spacer()
                 
-                Text("\(userData?.following?.count ?? .zero) \(SC.following.value)")
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                VStack(alignment: .center, content: {
+                    Text("\(userData?.images?.count ?? .zero)")
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                    
+                    Text(SC.post.value)
+                        .font(.system(size: 14))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                })
                 
-                Text(String.pipe)
-                    .fontWeight(.medium)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                pipeView()
                 
-                Text("\(userData?.followers?.count ?? .zero) \(SC.followers.value)")
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
+                VStack {
+                    Text("\(userData?.following?.count ?? .zero)")
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                    
+                    Text(SC.following.value)
+                        .font(.system(size: 14))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                }
+                
+                pipeView()
+                
+                VStack {
+                    Text("\(userData?.followers?.count ?? .zero)")
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                    
+                    Text(SC.followers.value)
+                        .font(.system(size: 14))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                }
+                
+                Spacer()
             }
-            .padding(0)
+            .padding(.zero)
             .frame(maxWidth: .infinity, alignment: .center)
             
-            Text(userData?.bio ?? .empty)
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, alignment: .topLeading)
+            HStack(spacing: 24) {
+                Text(userData?.name ?? .empty)
+                    .font(.rubik(size: 20))
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.white)
+                
+                FillButton(textButton: userID == userData?.id ? SC.editProfile.value : SC.follow.value) {
+                    if userID == userData?.id {
+                        #warning("Go to edit profile")
+                    } else {
+                        #warning("Action follow or unfolloe")
+                    }
+                    
+                    print("Tap action")
+                }
+                
+                Spacer()
+            }
+            
+            getUserBioView()
+        }
+    }
+    
+    private func pipeView() -> some View {
+        Text(String.pipe)
+            .font(.system(size: 26))
+            .multilineTextAlignment(.center)
+            .foregroundColor(.white)
+    }
+    
+    private func getUserBioView() -> some View {
+        let bioText: String = userData?.bio ?? .empty
+        let limitedBioText = isBioExpanded ? bioText : String(bioText.prefix(120))
+
+        return Group {
+            if bioText.count > 120 {
+                Text("\(limitedBioText) \(SC.tripleDots.value)")
+                    .foregroundColor(.white) +
+                    Text(showMoreButtonText)
+                    .underline()
+                    .font(.system(size: 16))
+                    .foregroundColor(.white)
+                    .bold()
+            } else {
+                Text(limitedBioText)
+                    .foregroundColor(.white)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .topLeading)
+        .multilineTextAlignment(.leading)
+        .onTapGesture {
+            withAnimation {
+                showMoreButtonText = showMoreButtonText == SC.showMore.value ? SC.hide.rawValue : SC.showMore.value
+                isBioExpanded.toggle()
+            }
         }
     }
 }
 
-struct UserDetailHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        UserHeaderView()
-    }
+#Preview {
+    UserHeaderView()
 }

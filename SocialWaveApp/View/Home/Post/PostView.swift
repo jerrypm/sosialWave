@@ -13,7 +13,7 @@ struct PostView: View {
 
     @State var post: PostModel
     @State var postingUser: QuickUser? = nil
-    @State private var likeCount: Int = 0
+    @State private var likeCount: Int = .zero
 
     var onTap: () -> Void
 

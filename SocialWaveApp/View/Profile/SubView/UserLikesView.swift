@@ -12,52 +12,44 @@ import SwiftUI
 struct UserLikesView: View {
     // MARK: - PROPERTIES
 
-    var likedUsers = ["Alice", "Bob", "Charlie", "Diana"]
+    var likedUsers: [UserLike]?
 
     // MARK: - BODY
 
     var body: some View {
         VStack {
             ScrollView {
-                HStack {
-                    Text(SC.likesby.value)
-                        .foregroundColor(.white)
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                        .padding(.leading)
+                if let likedUsers = likedUsers {
+                    ForEach(likedUsers, id: \.self) { user in
+                        VStack {
+                            HStack {
+                                Image.heartFill
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .foregroundColor(.white)
 
-                    Spacer()
-                }
+                                Text(user.username)
+                                    .font(.system(size: 12))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
 
-                ForEach(likedUsers, id: \.self) { user in
-                    VStack {
-                        HStack {
-                            Image.heart
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(.white)
+                                Text(SC.likeUpost.value)
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.white)
 
-                            Text(user)
-                                .font(.system(size: 12))
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
+                                Spacer()
 
-                            Text(SC.likeUpost.value)
-                                .font(.system(size: 12))
-                                .foregroundColor(.white)
+                                Text(determineTimeLabel(for: user.likedDate))
+                                    .font(.system(size: 12))
+                                    .foregroundColor(.gray)
+                            }
+                            .padding()
 
-                            Spacer()
-
-                            Text(determineTimeLabel(for: user)) // Placeholder for time label
-                                .font(.system(size: 12))
-                                .foregroundColor(.gray)
+                            Divider()
+                                .background(Color.white.opacity(0.5))
                         }
-                        .padding()
-
-                        Divider()
-                            .background(Color.white.opacity(0.5))
+//                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
                 }
 
                 Spacer(minLength: 64)
@@ -69,8 +61,4 @@ struct UserLikesView: View {
         // Implement your logic here to return "now", "yesterday", or a specific date
         return SC.now.value // Replace with actual logic
     }
-}
-
-#Preview {
-    UserLikesView()
 }

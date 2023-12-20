@@ -10,6 +10,8 @@ import Foundation
 typealias SC = StringConstant
 
 enum StringConstant: String {
+    case appUserID = "1212"
+    
     // MARK: - Empty & Tab
 
     case empty = ""
@@ -18,22 +20,23 @@ enum StringConstant: String {
     case space = "   "
     case tripleDots = "..."
     case charaterS = "s"
-    
+
     case homeTab = "Home"
     case searchTab = "Search"
     case chatTab = "Chat"
     case profileTab = "Profile"
-    
+
     // MARK: - Keys & Format
 
+    case userID
     case isShowTabBar
     case datePostFormat = "d MMM"
     case scrollID = "scroll_to_top"
-    
+
     // MARK: - Font Style
 
     case Rubik
-    
+
     // MARK: - Image System Name
 
     case newspaper
@@ -47,7 +50,7 @@ enum StringConstant: String {
     case personCircle = "person.circle"
     case photo
     case arrowUpCircleFill = "arrow.up.circle.fill"
-    
+
     // MARK: - Image Assets
 
     case home
@@ -56,7 +59,7 @@ enum StringConstant: String {
     case profile = "person"
     case comment
     case share
-    
+
     // MARK: - Colors String
 
     case darkCornflowerBlue = "Dark Cornflower Blue"
@@ -65,13 +68,17 @@ enum StringConstant: String {
     case backgroundDefault = "Background Default"
     case textPrimary = "Text Primary"
     case shadow = "Shadow Color"
-    
+
     // MARK: - Other
 
     case imageTitle = "Social Wave"
     case searchStory = "Search Story"
     case following
     case followers
+    case editProfile = "Edit Profile"
+    case follow = "Follow"
+    case unfollow = "Unfollow"
+    
     case myPost = "My Post"
     case like = "Like"
     case likes = "Likes"
@@ -80,10 +87,12 @@ enum StringConstant: String {
     case comments = "Comments"
     case noCommentsYet = "No comments yet"
     case messages = "Messages"
-    
-    case now = "now"
-    case yesterday = "yesterday"
-    
+    case now
+    case yesterday
+    case showMore = "show more"
+    case hide
+    case post = "Post"
+
     var value: String {
         return rawValue
     }

@@ -1,60 +1,58 @@
 {
   "userData": {
     "id": "1212",
-    "profile_picture": "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg"ßß,
+    "profile_picture": "https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg",
     "name": "Dr. Jhon",
     "username": "jhonlee",
     "email": "jhondoe@gmail.com",
     "country": "Singapore",
-    "bio": "Dr. Jhon Smith is a passionate biomedical scientist with over 15 years of experience in molecular biology and genetics research. He is committed to advancing the field of medical science through innovative research and collaboration. Dr. Smith is an advocate for public science education and regularly participates in community outreach programs.",
-    "following": ["ali", "lima", "erik"],
-    "followers": ["erik", "nita"]
-  },
-  "images": [
-    {
-      "imageUrl": "https://www.researchgate.net/profile/Peter-Siemund/publication/329755169/figure/fig1/AS:769346448130048@1560437895151/Written-task-in-English-Picture-story-Gut-gemeint-English-translation-Good.png"
-    },
-    {
-      "imageUrl": "https://buffer.com/library/content/images/2023/10/free-images.jpg"
-    },
-    {
-      "imageUrl": "https://img.freepik.com/premium-photo/young-girl-holding-film-camera-with-beautiful-zinnia-blooming-field-background-vacation-time_26077-225.jpg"
-    },
-    {
-      "imageUrl": "https://t3.ftcdn.net/jpg/06/49/51/82/360_F_649518247_J27irz9TezhqqHS6EpF0AQY7bFdVAIn8.jpg"
-    },
-    {
-      "imageUrl": "https://blog.snappa.com/wp-content/uploads/2022/02/Reshot-example-image.jpg"
-    },
-    {
-      "imageUrl": "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper01_low.jpg"
-    },
-    {
-      "imageUrl": "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper02_low.jpg"
-    },
-    {
-      "imageUrl": "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper03.jpg"
-    },
-    {
-      "imageUrl": "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper04.jpg"
-    }
-  ],
-  "userLikes": [
-    {
-      "username": "Alice",
-      "likedDate": "2023-12-18"
-    },
-    {
-      "username": "Bob",
-      "likedDate": "2023-12-17"
-    },
-    {
-      "username": "Charlie",
-      "likedDate": "2023-12-16"
-    },
-    {
-      "username": "Diana",
-      "likedDate": "2023-12-15"
-    }
-  ]
+    "bio": "I have a passionate biomedical scientist with over 15 years of experience in molecular biology and genetics research. He is committed to advancing the field of medical science through innovative research and collaboration. Dr. Smith is an advocate for public science education and regularly participates in community outreach programs.",
+    "followers": [
+      "erika76",
+      "nitaS24"
+    ],
+    "following": [
+      "ali21",
+      "limaGtu",
+      "lowErik"
+    ],
+    "images": [
+      "https://www.researchgate.net/profile/Peter-Siemund/publication/329755169/figure/fig1/AS:769346448130048@1560437895151/Written-task-in-English-Picture-story-Gut-gemeint-English-translation-Good.png",
+      "https://buffer.com/library/content/images/2023/10/free-images.jpg",
+      "https://img.freepik.com/premium-photo/young-girl-holding-film-camera-with-beautiful-zinnia-blooming-field-background-vacation-time_26077-225.jpg",
+      "https://t3.ftcdn.net/jpg/06/49/51/82/360_F_649518247_J27irz9TezhqqHS6EpF0AQY7bFdVAIn8.jpg",
+      "https://blog.snappa.com/wp-content/uploads/2022/02/Reshot-example-image.jpg",
+      "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper01_low.jpg",
+      "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper02_low.jpg",
+      "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper03.jpg",
+      "https://raw.githubusercontent.com/jerrypm/nextproject/master/wallpaper04.jpg"
+    ],
+    "user_likes": [
+      {
+        "user_id": "id11",
+        "username": "alicewan",
+        "likedDate": "2023-12-18"
+      },
+      {
+        "user_id": "id12",
+        "username": "boby",
+        "likedDate": "2023-12-17"
+      },
+      {
+        "user_id": "id13",
+        "username": "ch4rlie",
+        "likedDate": "2023-12-16"
+      },
+      {
+        "user_id": "id14",
+        "username": "mark9",
+        "likedDate": "2023-12-16"
+      },
+      {
+        "user_id": "id15",
+        "username": "dianaprincess",
+        "likedDate": "2023-12-15"
+      }
+    ]
+  }
 }

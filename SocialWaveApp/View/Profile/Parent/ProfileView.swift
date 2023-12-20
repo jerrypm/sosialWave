@@ -11,9 +11,9 @@ import SwiftUI
 struct ProfileView: View {
     // MARK: - PROPERTIES
 
-    @StateObject var viewModel = ProfileViewModel()
-    @State private var selectedTab = 0
-    @State var tabIndex = 0
+    @StateObject var viewModel = ProfileViewModel(profileAPI: ProfileAPIService())
+    @State private var selectedTab: Int = .zero
+    @State var tabIndex: Int = .zero
 
     // MARK: - BODY
 
@@ -23,20 +23,16 @@ struct ProfileView: View {
                 TitleToolBar(title: SC.profileTab.value)
                 ScrollView(showsIndicators: false) {
                     LazyVStack(spacing: 16) {
-                        // Image Profile
-                        ImageProfileView(imageProfileURL: viewModel.userImageURL)
-                            .padding(.vertical, 12)
-                            .frame(width: 110, height: 110, alignment: .center)
-
-                        // User Header
                         UserHeaderView(userData: viewModel.userData)
+                        Divider()
+                            .background(Color.secondary)
 
                         // Custom Top TabBar
                         CustomTopTabBar(tabIndex: $tabIndex)
-                        if tabIndex == 0 {
-                            UserPostView(dummyImages: viewModel.dummyImages)
+                        if tabIndex == .zero {
+                            UserPostView(images: viewModel.userData?.images ?? [.empty])
                         } else {
-                            UserLikesView()
+                            UserLikesView(likedUsers: viewModel.userData?.userLikes)
                         }
                         Spacer(minLength: 64)
                     }
@@ -44,13 +40,13 @@ struct ProfileView: View {
                 }
                 .navigationBarTitleDisplayMode(.inline)
             }
+            .padding()
             .background(Color.primary)
+            .onAppear(perform: viewModel.fetchProfile)
         }
     }
 }
 
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
-    }
+#Preview {
+    ProfileView()
 }

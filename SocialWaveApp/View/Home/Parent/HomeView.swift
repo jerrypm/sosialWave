@@ -11,10 +11,10 @@ struct HomeView: View {
     // MARK: - PROPERTIES
 
     @StateObject var viewModel = HomeViewModel(homePostsAPIService: HomePostsAPIService())
-    @State private var heartSize: CGFloat = 0
+    @State private var heartSize: CGFloat = .zero
     @State private var showLikeAnimation: Bool = false
-    @State var scrollViewOffset: CGFloat = 0
-    @State var startOffset: CGFloat = 0
+    @State var scrollViewOffset: CGFloat = .zero
+    @State var startOffset: CGFloat = .zero
 
     // MARK: - BODY
 
@@ -51,7 +51,7 @@ struct HomeView: View {
                             .overlay {
                                 GeometryReader { proxy -> Color in
                                     DispatchQueue.main.async {
-                                        if startOffset == 0 {
+                                        if startOffset == .zero {
                                             self.startOffset = proxy.frame(in: .global).minY
                                         }
 
@@ -61,7 +61,7 @@ struct HomeView: View {
 
                                     return Color.clear
                                 }
-                                .frame(width: 0, height: 0)
+                                .frame(width: .zero, height: .zero)
                             }
 
                             Spacer(minLength: 100)
@@ -107,7 +107,7 @@ struct HomeView: View {
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     withAnimation(.easeOut(duration: 0.3)) {
-                        self.heartSize = 0
+                        self.heartSize = .zero
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         showLikeAnimation = false

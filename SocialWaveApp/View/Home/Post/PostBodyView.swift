@@ -63,7 +63,7 @@ struct PostBodyView: View {
                 }
                 Spacer()
             }
-            .padding(EdgeInsets(top: 0, leading: 16, bottom: 24, trailing: 16))
+            .padding(EdgeInsets(top: .zero, leading: 16, bottom: 24, trailing: 16))
         }
         .background(Color.white)
         .cornerRadius(12)

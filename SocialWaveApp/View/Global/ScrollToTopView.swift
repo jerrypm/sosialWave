@@ -29,7 +29,7 @@ struct ScrollToTopButton: View {
                 }
                 .padding(.trailing, 4)
                 .padding(.bottom, 4)
-                .opacity(isButtonHidden ? 0 : 1)
+                .opacity(isButtonHidden ? .zero : 1)
             }
         }
         .onTapGesture {

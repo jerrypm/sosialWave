@@ -16,15 +16,28 @@ struct ImageProfileView: View {
     // MARK: - BODY
 
     var body: some View {
-        HStack(alignment: .center, spacing: 0) {
+        HStack(alignment: .center, spacing: .zero) {
             Rectangle()
                 .foregroundColor(.clear)
-                .frame(width: 100, height: 100)
+                .frame(width: 64, height: 64)
                 .background(
                     KFImage(URL(string: imageProfileURL ?? .empty))
                         .resizable()
+                        .placeholder {
+                            ZStack {
+                                Image.photo
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 100)
+                                    .opacity(0.3)
+
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle())
+                                    .scaleEffect(2)
+                            }
+                        }
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
+                        .frame(width: 64, height: 64)
                         .clipped()
                 )
                 .cornerRadius(100)
@@ -35,12 +48,9 @@ struct ImageProfileView: View {
                 )
         }
         .padding(.vertical, 12)
-        .frame(width: 110, height: 110, alignment: .center)
     }
 }
 
-struct ImageProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageProfileView()
-    }
+#Preview {
+    ImageProfileView()
 }

@@ -12,8 +12,8 @@ struct CustomTopTabBar: View {
     var body: some View {
         HStack(spacing: 20) {
             Spacer()
-            TabBarButton(text: SC.myPost.value, isSelected: .constant(tabIndex == 0))
-                .onTapGesture { onButtonTapped(index: 0) }
+            TabBarButton(text: SC.myPost.value, isSelected: .constant(tabIndex == .zero))
+                .onTapGesture { onButtonTapped(index: .zero) }
             Spacer()
             TabBarButton(text: SC.likes.value, isSelected: .constant(tabIndex == 1))
                 .onTapGesture { onButtonTapped(index: 1) }

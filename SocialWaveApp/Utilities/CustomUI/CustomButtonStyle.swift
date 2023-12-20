@@ -35,7 +35,7 @@ func onBoardingButton(title: String) -> some View {
         .font(.system(size: 15))
         .fontWeight(.medium)
         .padding(.vertical)
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 44, maxHeight: 44, alignment: .center)
+        .frame(minWidth: .zero, maxWidth: .infinity, minHeight: 44, maxHeight: 44, alignment: .center)
         .background(Color.white)
         .cornerRadius(8)
         .shadow(radius: 3)

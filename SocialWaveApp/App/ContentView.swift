@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     // MARK: PROPERTIES
 
+    @AppStorage(SC.userID.value) var userID: String = .empty
     @AppStorage(SC.isShowTabBar.value) var isShowTabBar: Bool = true
     @StateObject var homeViewModel = HomeViewModel(homePostsAPIService: HomePostsAPIService())
     @StateObject var searchViewModel = SearchViewModel(searchAPI: SearchAPIService())
-    @State var selectedTab: Int = 0
+    @State var selectedTab: Int = .zero
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -29,6 +30,7 @@ struct ContentView: View {
             .animation(nil, value: selectedTab)
             .accentColor(.white)
             .onAppear {
+                userID = SC.appUserID.value
                 isShowTabBar = true
                 UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                 homeViewModel.fetchPosts()

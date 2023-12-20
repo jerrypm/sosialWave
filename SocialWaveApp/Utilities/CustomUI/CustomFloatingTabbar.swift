@@ -18,11 +18,11 @@ struct FloatingTabbar: View {
         HStack {
             //: Home
             Button {
-                selected = 0
+                selected = .zero
             } label: {
-                Image.home.foregroundColor(selected == 0 ? .primary : .gray)
-                Text(selected == 0 ? SC.homeTab.value : .empty)
-                    .foregroundColor(selected == 0 ? .primary : .gray)
+                Image.home.foregroundColor(selected == .zero ? .primary : .gray)
+                Text(selected == .zero ? SC.homeTab.value : .empty)
+                    .foregroundColor(selected == .zero ? .primary : .gray)
             }
             Spacer(minLength: 15)
 

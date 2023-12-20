@@ -23,6 +23,6 @@ struct TabBarButton: View {
             .frame(maxWidth: .infinity, alignment: .center)
             .multilineTextAlignment(.center)
             .foregroundColor(.white)
-            .border(width: isSelected ? 2 : 0, edges: [.bottom], color: .white)
+            .border(width: isSelected ? 2 : .zero, edges: [.bottom], color: .white)
     }
 }

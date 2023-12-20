@@ -52,7 +52,7 @@ struct ChatViewChild: View {
                         .kerning(0.14)
                         .foregroundColor(.white)
                 }
-                .padding(0)
+                .padding(.zero)
                 .frame(maxWidth: .infinity, alignment: .bottom)
 
                 // Body
@@ -64,7 +64,6 @@ struct ChatViewChild: View {
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .topLeading)
         }
-//        .background(Color.secondary.opacity(0.1))
         .padding(16)
         .frame(alignment: .topLeading)
     }
