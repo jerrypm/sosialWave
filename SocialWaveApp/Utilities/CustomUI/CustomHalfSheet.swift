@@ -18,9 +18,7 @@ struct HalfSheetHelper<SheetView: View>: UIViewControllerRepresentable {
         return controller
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context:
-        Context)
-    {
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         if showSheet {
             // presenting Modal View....
             let sheetController = CustomHostingController(rootView: sheetView)

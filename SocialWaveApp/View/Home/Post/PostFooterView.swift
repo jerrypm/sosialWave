@@ -12,7 +12,7 @@ struct PostFooterView: View {
 
     @State private var isSheetPresented = false
     @State var post: PostModel
-    var onTap: () -> Void
+    var onTapAction: () -> Void
     
     // MARK: - BODY
 
@@ -29,7 +29,7 @@ struct PostFooterView: View {
                     Text(SC.like.value)
                 }
                 .onTapGesture {
-                    onTap()
+                    onTapAction()
                 }
                 
                 // Comments

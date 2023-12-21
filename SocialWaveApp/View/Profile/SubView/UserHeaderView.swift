@@ -13,6 +13,7 @@ struct UserHeaderView: View {
     @AppStorage(SC.userID.value) var userID: String = .empty
     
     @State var userData: UserModel?
+    @State private var isSheetPresented = false
     @State private var isBioExpanded: Bool = false
     @State private var showMoreButtonText: String = SC.showMore.value
     
@@ -79,21 +80,15 @@ struct UserHeaderView: View {
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
                 
-                FillButton(textButton: userID == userData?.id ? SC.editProfile.value : SC.follow.value) {
-                    if userID == userData?.id {
-                        #warning("Go to edit profile")
-                    } else {
-                        #warning("Action follow or unfolloe")
-                    }
-                    
-                    print("Tap action")
-                }
-                
-                Spacer()
+                buttonsView()
             }
             
             getUserBioView()
         }
+        .halfSheet(showSheet: $isSheetPresented, sheeView: {
+        //            CommentsView(comments: post.comments)
+        })
+        
     }
     
     private func pipeView() -> some View {
@@ -101,6 +96,28 @@ struct UserHeaderView: View {
             .font(.system(size: 26))
             .multilineTextAlignment(.center)
             .foregroundColor(.white)
+    }
+    
+    private func buttonsView() -> some View {
+        HStack(spacing: 8) {
+            let isUser = userID == userData?.id
+            FillButton(textButton: isUser ? SC.editProfile.value : SC.follow.value) {
+                if isUser {
+                    #warning("Go to edit profile")
+                } else {
+                    #warning("Action follow or unfolloe")
+                }
+                
+                print("Tap action")
+            }
+            if isUser {
+                FillImageButton(imageButton: Image.share) {
+                    isSheetPresented.toggle()
+                }
+            } else {
+                Spacer()
+            }
+        }
     }
     
     private func getUserBioView() -> some View {

@@ -11,7 +11,7 @@ typealias SC = StringConstant
 
 enum StringConstant: String {
     case appUserID = "1212"
-    
+
     // MARK: - Empty & Tab
 
     case empty = ""
@@ -59,6 +59,7 @@ enum StringConstant: String {
     case profile = "person"
     case comment
     case share
+    case filter
 
     // MARK: - Colors String
 
@@ -78,7 +79,7 @@ enum StringConstant: String {
     case editProfile = "Edit Profile"
     case follow = "Follow"
     case unfollow = "Unfollow"
-    
+
     case myPost = "My Post"
     case like = "Like"
     case likes = "Likes"

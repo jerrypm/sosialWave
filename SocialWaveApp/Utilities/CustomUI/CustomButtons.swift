@@ -11,11 +11,11 @@ import SwiftUI
 
 struct FillButton: View {
     @State var textButton: String?
-    var onTap: () -> Void
+    var onTapAction: () -> Void
 
     var body: some View {
         Button {
-            onTap()
+            onTapAction()
         } label: {
             Text(textButton ?? .empty)
                 .foregroundColor(.primary)
@@ -27,15 +27,34 @@ struct FillButton: View {
     }
 }
 
+// MARK: Fill Image Button
+
+struct FillImageButton: View {
+    @State var imageButton: Image
+    var onTapAction: () -> Void
+
+    var body: some View {
+        Button {
+            onTapAction()
+        } label: {
+            imageButton
+                .foregroundColor(.primary)
+                .frame(maxWidth: 40, minHeight: 30)
+                .background(Color.secondary)
+                .cornerRadius(10)
+        }
+    }
+}
+
 // MARK: Border Button
 
 struct BorderButton: View {
     @State var textButton: String?
-    var onTap: () -> Void
+    var onTapAction: () -> Void
 
     var body: some View {
         Button {
-            onTap()
+            onTapAction()
         } label: {
             Text(textButton ?? .empty)
                 .font(.system(size: 16, weight: .semibold))

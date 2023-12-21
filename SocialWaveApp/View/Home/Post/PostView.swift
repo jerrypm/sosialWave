@@ -15,7 +15,7 @@ struct PostView: View {
     @State var postingUser: QuickUser? = nil
     @State private var likeCount: Int = .zero
 
-    var onTap: () -> Void
+    var onTapAction: () -> Void
 
     // MARK: - BODY
 
@@ -41,7 +41,7 @@ struct PostView: View {
 
                 // Footer
                 PostFooterView(post: post) {
-                    onTap()
+                    onTapAction()
                 }
             }
             .padding(EdgeInsets(top: 24, leading: 8, bottom: 24, trailing: 8))

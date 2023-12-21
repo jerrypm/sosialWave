@@ -36,11 +36,11 @@ struct ProfileView: View {
                         }
                         Spacer(minLength: 64)
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 8)
                 }
                 .navigationBarTitleDisplayMode(.inline)
             }
-            .padding()
+            .padding(16)
             .background(Color.primary)
             .onAppear(perform: viewModel.fetchProfile)
         }

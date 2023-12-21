@@ -40,7 +40,7 @@ struct HomeView: View {
                                 ForEach(self.viewModel.posts) { post in
                                     PostView(
                                         post: post,
-                                        onTap: {
+                                        onTapAction: {
                                             self.showLikeAnimation.toggle()
                                         }
                                     )

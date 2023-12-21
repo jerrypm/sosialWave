@@ -55,6 +55,10 @@ public extension Image {
     static var imageTitle: Image {
         return Image(SC.imageTitle.value)
     }
+    
+    static var filter: Image {
+        return Image(SC.filter.value)
+    }
 
     // Tabbar
     static var home: Image {
