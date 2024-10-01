@@ -17,13 +17,13 @@ struct CategoryView: View {
     var body: some View {
         HStack {
             category.icon()
-                .foregroundColor(.primary)
+                .foregroundColor(.textWhite)
 
             Text(category.name())
-                .foregroundColor(.primary)
+                .foregroundColor(.textWhite)
         }
         .padding(10)
-        .background(Color.secondary)
+        .background(Color.primary)
         .cornerRadius(10)
     }
 }

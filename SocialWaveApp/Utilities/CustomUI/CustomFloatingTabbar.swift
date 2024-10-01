@@ -57,7 +57,7 @@ struct FloatingTabbar: View {
         }
         .padding(.vertical, 20)
         .padding(.horizontal, 35)
-        .background(Color.secondary)
+        .background(Color.backgroundWhite)
         .clipShape(Capsule())
         .overlay( /// apply a rounded border
             RoundedRectangle(cornerRadius: 30)

@@ -69,10 +69,12 @@ enum StringConstant: String {
     case backgroundDefault = "Background Default"
     case textPrimary = "Text Primary"
     case shadow = "Shadow Color"
+    case natural = "naturalWhite"
+    case natural00 = "natural00"
 
     // MARK: - Other
 
-    case imageTitle = "Social Wave"
+    case imageTitle = "image-brand"
     case searchStory = "Search Story"
     case following
     case followers

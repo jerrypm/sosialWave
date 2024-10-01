@@ -20,6 +20,7 @@
 		13A1CCD92B309EA90035FA11 /* chatUsers.json in Resources */ = {isa = PBXBuildFile; fileRef = 13A1CCD82B309EA90035FA11 /* chatUsers.json */; };
 		13A1CCDB2B30A56C0035FA11 /* searchItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 13A1CCDA2B30A56C0035FA11 /* searchItems.json */; };
 		13A1CCDD2B30A9D90035FA11 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A1CCDC2B30A9D90035FA11 /* SearchResultModel.swift */; };
+		13DEFCAB2C04268500C65FAF /* PostTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DEFCAA2C04268500C65FAF /* PostTextFieldView.swift */; };
 		13F57BEF2B2B643D00C1AEA8 /* CustomHalfSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F57BEE2B2B643D00C1AEA8 /* CustomHalfSheet.swift */; };
 		13F617ED2B2E8A47005A867C /* SearchItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F617EC2B2E8A47005A867C /* SearchItemsView.swift */; };
 		13FC57162B2BF1510077309A /* CustomHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC57152B2BF1510077309A /* CustomHostingController.swift */; };
@@ -91,6 +92,7 @@
 		13A1CCD82B309EA90035FA11 /* chatUsers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = chatUsers.json; sourceTree = "<group>"; };
 		13A1CCDA2B30A56C0035FA11 /* searchItems.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = searchItems.json; sourceTree = "<group>"; };
 		13A1CCDC2B30A9D90035FA11 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
+		13DEFCAA2C04268500C65FAF /* PostTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTextFieldView.swift; sourceTree = "<group>"; };
 		13F57BEE2B2B643D00C1AEA8 /* CustomHalfSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHalfSheet.swift; sourceTree = "<group>"; };
 		13F617EC2B2E8A47005A867C /* SearchItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemsView.swift; sourceTree = "<group>"; };
 		13FC57152B2BF1510077309A /* CustomHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHostingController.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 			children = (
 				C411A63F2AE6C5D500FC0B8D /* HomeView.swift */,
 				C4BD2F012AF22AF4001F4D7F /* CategoryView.swift */,
+				13DEFCAA2C04268500C65FAF /* PostTextFieldView.swift */,
 			);
 			path = Parent;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				BCED0D672AD99880007D00C0 /* NotificationsEnum.swift in Sources */,
 				C451519F2B0903C0009419E9 /* CustomSearchBar.swift in Sources */,
 				131EE40A2B2DF59200FA6241 /* Typealias.swift in Sources */,
+				13DEFCAB2C04268500C65FAF /* PostTextFieldView.swift in Sources */,
 				C41BD0242AE95D0F00BBEB0E /* PostView.swift in Sources */,
 				13F57BEF2B2B643D00C1AEA8 /* CustomHalfSheet.swift in Sources */,
 				1381B6432B32C1B000C49721 /* CustomButtons.swift in Sources */,
@@ -744,6 +748,7 @@
 				DEVELOPMENT_TEAM = HP77R9PHEA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Social Wave";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -774,6 +779,7 @@
 				DEVELOPMENT_TEAM = HP77R9PHEA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Social Wave";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

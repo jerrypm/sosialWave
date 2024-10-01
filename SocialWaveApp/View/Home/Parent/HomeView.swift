@@ -67,7 +67,7 @@ struct HomeView: View {
                             Spacer(minLength: 100)
                         }
                         .navigationBarTitleDisplayMode(.inline)
-                        .background(Color.primary)
+                        .background(Color.backgroundNatural)
                         .onAppear(perform: viewModel.fetchPosts)
                         .overlay {
                             if scrollViewOffset < -500 {
@@ -90,7 +90,7 @@ struct HomeView: View {
                     self.likePost()
                 }
             }
-            .background(Color.primary)
+            .background(Color.backgroundNatural)
         }
     }
 

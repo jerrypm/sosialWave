@@ -31,8 +31,20 @@ public extension Color {
     static var backgroundDefault: Color {
         return Color(SC.backgroundDefault.value)
     }
+    
+    static var backgroundWhite: Color {
+        return Color(SC.natural.value)
+    }
+    
+    static var backgroundNatural: Color {
+        return Color(SC.natural00.value)
+    }
 
     // MARK: Category - Text
+    
+    static var textWhite: Color {
+        return Color(SC.natural.value)
+    }
 
     static var textPrimary: Color {
         return Color(SC.textPrimary.value)
