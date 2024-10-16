@@ -18,12 +18,14 @@ struct CategoryView: View {
         HStack {
             category.icon()
                 .foregroundColor(.textWhite)
+                .frame(width: 12, height: 12)
 
             Text(category.name())
                 .foregroundColor(.textWhite)
+                .font(.system(size: 12))
         }
-        .padding(10)
+        .padding(8)
         .background(Color.primary)
-        .cornerRadius(10)
+        .cornerRadius(8)
     }
 }

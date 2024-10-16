@@ -1,0 +1,21 @@
+# Xcode
+#
+build/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcuserstate
+
+# CocoaPods
+#
+Pods/
+xcuserdata/
+
+# Temporary files
+.DS_Store
+.tmp/
+*.log

@@ -26,13 +26,16 @@ struct HomeView: View {
                     ScrollViewReader { proxyReader in
 
                         ScrollView(showsIndicators: false) {
+                            // MARK: Segment scroll horizontal
+
                             ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHStack(spacing: 14) {
+                                LazyHStack(spacing: 8) {
                                     ForEach(self.viewModel.categories, id: \.self) { category in
                                         CategoryView(category: category)
                                     }
                                 }
                                 .padding(.horizontal)
+                                .scaleEffect(0.98)
                             }
                             .id(SC.scrollID.value)
 
@@ -124,9 +127,9 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
         UIViewController()
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
-        if let nc = uiViewController.navigationController {
-            configure(nc)
+    func updateUIViewController(_ viewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+        if let controller = viewController.navigationController {
+            configure(controller)
         }
     }
 }
