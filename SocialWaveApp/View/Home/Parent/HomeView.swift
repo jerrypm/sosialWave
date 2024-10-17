@@ -32,6 +32,12 @@ struct HomeView: View {
                                 LazyHStack(spacing: 8) {
                                     ForEach(self.viewModel.categories, id: \.self) { category in
                                         CategoryView(category: category)
+                                            .id(category)
+                                            .onTapGesture {
+                                                withAnimation {
+                                                    proxyReader.scrollTo(category, anchor: .center)
+                                                }
+                                            }
                                     }
                                 }
                                 .padding(.horizontal)

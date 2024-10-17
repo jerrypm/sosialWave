@@ -19,3 +19,6 @@ xcuserdata/
 .DS_Store
 .tmp/
 *.log
+
+# Ignore xcuserdata files
+**/xcuserdata/**/UserInterfaceState.xcuserstate
