@@ -13,8 +13,10 @@ struct HomeView: View {
     @StateObject var viewModel = HomeViewModel(homePostsAPIService: HomePostsAPIService())
     @State private var heartSize: CGFloat = .zero
     @State private var showLikeAnimation: Bool = false
-    @State var scrollViewOffset: CGFloat = .zero
-    @State var startOffset: CGFloat = .zero
+    @State private var scrollViewOffset: CGFloat = .zero
+    @State private var startOffset: CGFloat = .zero
+    @State private var selectedCategory: Categories = .trending
+    @State private var searchText: String = .empty
 
     // MARK: - BODY
 
@@ -22,75 +24,23 @@ struct HomeView: View {
         NavigationView {
             ZStack {
                 VStack {
-                    LogoToolbarImage()
+                    CustomNavigationView(searchText: $searchText)
+                    
                     ScrollViewReader { proxyReader in
-
                         ScrollView(showsIndicators: false) {
-                            // MARK: Segment scroll horizontal
-
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                LazyHStack(spacing: 8) {
-                                    ForEach(self.viewModel.categories, id: \.self) { category in
-                                        CategoryView(category: category)
-                                            .id(category)
-                                            .onTapGesture {
-                                                withAnimation {
-                                                    proxyReader.scrollTo(category, anchor: .center)
-                                                }
-                                            }
-                                    }
-                                }
-                                .padding(.horizontal)
-                                .scaleEffect(0.98)
-                            }
-                            .id(SC.scrollID.value)
-
-                            LazyVStack(spacing: 0) {
-                                ForEach(self.viewModel.posts) { post in
-                                    PostView(
-                                        post: post,
-                                        onTapAction: {
-                                            self.showLikeAnimation.toggle()
-                                        }
-                                    )
-                                    .padding(.bottom)
-                                }
-                            }
-                            .padding()
-                            .overlay {
-                                GeometryReader { proxy -> Color in
-                                    DispatchQueue.main.async {
-                                        if startOffset == .zero {
-                                            self.startOffset = proxy.frame(in: .global).minY
-                                        }
-
-                                        let offset = proxy.frame(in: .global).minY
-                                        scrollViewOffset = offset - startOffset
-                                    }
-
-                                    return Color.clear
-                                }
-                                .frame(width: .zero, height: .zero)
-                            }
+                            HorizontalCategoryScroll(proxyReader: proxyReader)
+                            postListView()
 
                             Spacer(minLength: 100)
                         }
                         .navigationBarTitleDisplayMode(.inline)
-                        .background(Color.backgroundNatural)
+                        .background(Color.backgroundNeutral)
                         .onAppear(perform: viewModel.fetchPosts)
                         .overlay {
-                            if scrollViewOffset < -500 {
-                                ScrollToTopButton {
-                                    withAnimation(.spring()) {
-                                        proxyReader.scrollTo(SC.scrollID.value, anchor: .top)
-                                    }
-                                }
-                                .offset(
-                                    x: UIScreen.main.bounds.width / 2 - 50,
-                                    y: UIScreen.main.bounds.height / 2 - 200
-                                )
-                                .frame(width: 20, height: 20)
-                            }
+                            ScrollToTopButtonOverlay(
+                                scrollViewOffset: scrollViewOffset,
+                                proxyReader: proxyReader
+                            )
                         }
                     }
                 }
@@ -99,9 +49,66 @@ struct HomeView: View {
                     self.likePost()
                 }
             }
-            .background(Color.backgroundNatural)
+            .background(Color.backgroundNeutral)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
+
+    // MARK: Segment scroll horizontal
+
+    private func HorizontalCategoryScroll(proxyReader: ScrollViewProxy) -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(spacing: 8) {
+                ForEach(self.viewModel.categories, id: \.self) { category in
+                    CategoryView(category: category, isSelected: selectedCategory == category)
+                        .id(category)
+                        .onTapGesture {
+                            withAnimation {
+                                selectedCategory = category
+                                proxyReader.scrollTo(category, anchor: .center)
+                            }
+                        }
+                }
+            }
+            .padding(.horizontal)
+            .scaleEffect(0.98)
+        }
+        .id(SC.scrollID.value)
+    }
+
+    // MARK: Post List View
+
+    private func postListView() -> some View {
+        LazyVStack(spacing: 0) {
+            ForEach(viewModel.posts) { post in
+                PostView(
+                    post: post,
+                    onTapAction: {
+                        self.showLikeAnimation.toggle()
+                    }
+                )
+                .padding(.bottom)
+            }
+        }
+        .padding()
+        .overlay {
+            GeometryReader { proxy -> Color in
+                DispatchQueue.main.async {
+                    if startOffset == .zero {
+                        self.startOffset = proxy.frame(in: .global).minY
+                    }
+
+                    let offset = proxy.frame(in: .global).minY
+                    scrollViewOffset = offset - startOffset
+                }
+
+                return Color.clear
+            }
+            .frame(width: .zero, height: .zero)
+        }
+    }
+
+    // MARK: Like post UI
 
     private func likePost() -> some View {
         Image.heartFill

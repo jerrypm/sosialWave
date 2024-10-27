@@ -11,48 +11,52 @@ public extension Color {
     // MARK: Category: Primary
 
     static var primary: Color {
-        return Color(SC.darkCornflowerBlue.value)
+        return Color(SC.primary_blue.value)
     }
 
     // MARK: Category: secondary
 
     static var secondary: Color {
-        return Color(SC.caramel.value)
-    }
-
-    // MARK: Category - Blue
-
-    static var malibu: Color {
-        return Color(SC.malibu.value)
+        return Color(SC.secondary_orange.value)
     }
 
     // MARK: Category - Background
 
     static var backgroundDefault: Color {
-        return Color(SC.backgroundDefault.value)
+        return Color(SC.background_primary.value)
     }
     
     static var backgroundWhite: Color {
-        return Color(SC.natural.value)
+        return Color(SC.neutral_white.value)
     }
     
-    static var backgroundNatural: Color {
-        return Color(SC.natural00.value)
+    static var backgroundNeutral: Color {
+        return Color(SC.neutral_gray_light.value)
     }
 
     // MARK: Category - Text
     
     static var textWhite: Color {
-        return Color(SC.natural.value)
+        return Color(SC.neutral_white.value)
     }
 
     static var textPrimary: Color {
-        return Color(SC.textPrimary.value)
+        return Color(SC.text_primary.value)
     }
 
     // MARK: Category - Shadow
 
     static var shadow: Color {
-        return Color(SC.shadow.value)
+        return Color(SC.background_shadow.value)
+    }
+    
+    static var lightSilver: Color {
+        return Color(SC.secondary_silver.value)
+    }
+    
+    // MARK: Navigation Bar
+    
+    static var navbarLogo: Color {
+        return Color(SC.navbar_left_logo.value)
     }
 }

@@ -53,28 +53,29 @@ enum StringConstant: String {
 
     // MARK: - Image Assets
 
-    case home
-    case search
-    case chat = "chat_bubble"
-    case profile = "person"
-    case comment
-    case share
-    case filter
+    case home = "tabbar_home"
+    case search = "tabbar_search"
+    case chat = "tabbar_chat"
+    case profile = "tabbar_profile"
+    case comment = "icon_comment"
+    case share = "icon_share"
+    case filter = "icon_filter"
+    case imageTitle = "image_title_blue"
+    case navbar_left_logo
 
     // MARK: - Colors String
 
-    case darkCornflowerBlue = "Dark Cornflower Blue"
-    case caramel = "Caramel"
-    case malibu = "Malibu"
-    case backgroundDefault = "Background Default"
-    case textPrimary = "Text Primary"
-    case shadow = "Shadow Color"
-    case natural = "naturalWhite"
-    case natural00 = "natural00"
+    case primary_blue
+    case secondary_orange
+    case secondary_silver
+    case background_primary
+    case background_shadow
+    case neutral_white
+    case neutral_gray_light
+    case text_primary
 
-    // MARK: - Other
+    // MARK: - Other text
 
-    case imageTitle = "image-brand"
     case searchStory = "Search Story"
     case following
     case followers

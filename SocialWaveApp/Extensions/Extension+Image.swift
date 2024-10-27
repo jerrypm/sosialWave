@@ -59,6 +59,10 @@ public extension Image {
     static var filter: Image {
         return Image(SC.filter.value)
     }
+    
+    static var navbarLeft: Image {
+        return Image(SC.navbar_left_logo.value)
+    }
 
     // Tabbar
     static var home: Image {
